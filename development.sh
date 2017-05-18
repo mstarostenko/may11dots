@@ -1,3 +1,6 @@
+# printf '\033]11;[90]#013147\007'
+printf '\033]11;[90]#012e39\007'
+
 tmux has-session -t quakesession
 if [ $? != 0 ]
 then

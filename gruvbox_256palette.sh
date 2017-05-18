@@ -2,6 +2,7 @@
 
 if [ "${TERM%%-*}" = "screen" ]; then
   if [ -n "$TMUX" ]; then
+    # echo 'test gruvbox-colorscheme: TMUX'
     printf "\033Ptmux;\033\033]4;236;rgb:32/30/2f\007\033\\"
     printf "\033Ptmux;\033\033]4;234;rgb:1d/20/21\007\033\\"
 
@@ -39,6 +40,7 @@ if [ "${TERM%%-*}" = "screen" ]; then
     printf "\033Ptmux;\033\033]4;66;rgb:42/7b/58\007\033\\"
     printf "\033Ptmux;\033\033]4;130;rgb:af/3a/03\007\033\\"
   else
+    # echo 'test gruvbox-colorscheme: NO TMUX'
     printf "\033P\033]4;236;rgb:32/30/2f\007\033\\"
     printf "\033P\033]4;234;rgb:1d/20/21\007\033\\"
 
@@ -78,6 +80,7 @@ if [ "${TERM%%-*}" = "screen" ]; then
   fi
 
 elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ]; then
+    # echo 'test gruvbox-colorscheme: other'
 
   printf "\033]4;236;rgb:32/30/2f\033\\"
   printf "\033]4;234;rgb:1d/20/21\033\\"

@@ -40,3 +40,5 @@ export PS1="\n\[\033[38;5;23m\]░░░░\[$(tput sgr0)\]\[\033[38;5;15m\] \[$
 #      echo "'$1' is not a valid file to extract"
 #   fi
 # }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

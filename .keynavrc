@@ -1,4 +1,4 @@
-alt+semicolon start,grid 4x3
+super+semicolon start,grid 4x3
 
 ampersand cell-select 1,warp
 semicolon cell-select 2,warp
