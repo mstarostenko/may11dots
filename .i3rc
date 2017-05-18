@@ -1,0 +1,314 @@
+#Basic settings
+set $mod Mod4
+
+font pango:monospace 11
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+
+# class                 border  backgr. text    indicator
+client.focused          #000000 #f65555 #ffffff #102704
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #90j000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+hide_edge_borders both
+for_window [class="^.*"] border pixel 1 
+gaps inner 10
+gaps outer 5 
+
+bindsym $mod+F7		exec transset-df -a --dec .15
+bindsym $mod+F8		exec transset-df -a --inc .15
+
+
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font pango:mononoki Nerd Font
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 10
+
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+# bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -opacity "85" -bw 0 -bc $bg-color -bg $bg-color -fg $text-color -hlbg $bg-color -hlfg #9575cd
+
+#  -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+
+# bindsym $mod+d exec dmenu_run -b -nb -red
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#
+
+# for_window [class="*rxvt*"] border pixel 10
+
+# enable floating mode and move container to workspace 4
+for_window [class="evil"] floating enable, move container to workspace 4
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Right split h
+
+# split in vertical orientation
+bindsym $mod+Down split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# switch to workspace
+# bindsym $mod+1 workspace $tag1
+# bindsym $mod+2 workspace 2
+# bindsym $mod+3 workspace $tag3
+# bindsym $mod+4 workspace $tag4
+# bindsym $mod+5 workspace $tag5
+# bindsym $mod+6 workspace 6
+# bindsym $mod+7 workspace $tag7
+# bindsym $mod+8 workspace 8
+# bindsym $mod+9 workspace 9
+# bindsym $mod+0 workspace 10
+
+# switch to workspace
+# bindsym $mod+1		workspace $ws1
+# bindsym $mod+2		workspace $ws2
+# bindsym $mod+3		workspace $ws3
+# bindsym $mod+4		workspace $ws4
+# bindsym $mod+5		workspace $ws5
+# bindsym $mod+6		workspace $ws6
+# bindsym $mod+7		workspace $ws7
+# bindsym $mod+8		workspace $ws8
+# bindsym $mod+9		workspace $ws9
+# bindsym $mod+0		workspace $ws0
+
+# move focused container to workspace
+# bindsym $mod+Shift+1 move container to workspace $ws1
+# bindsym $mod+Shift+2 move container to workspace $ws2
+# bindsym $mod+Shift+3 move container to workspace $ws3
+# bindsym $mod+Shift+4 move container to workspace $ws4
+# bindsym $mod+Shift+5 move container to workspace $ws5
+# bindsym $mod+Shift+6 move container to workspace $ws5
+# bindsym $mod+Shift+7 move container to workspace $ws6
+# bindsym $mod+Shift+8 move container to workspace $ws7
+# bindsym $mod+Shift+9 move container to workspace $ws8
+# bindsym $mod+Shift+0 move container to workspace $ws9
+
+set $myModC Mod4
+set $dollarC 49
+set $ampC 10
+set $sevenC 11
+set $fiveC 12
+set $threeC 13
+set $oneC 14
+set $nineC 15
+set $zeroC 16
+set $twoC 17
+set $fourC 18
+set $sixC 19
+set $eightC 20
+set $hashC 21
+
+# assign workspaces to screens
+# workspace "1:$"  output HDMI3
+# workspace "2:&"  output HDMI3
+# workspace "3:7"  output HDMI3
+# workspace "4:5"  output HDMI3
+# workspace "5:3"  output HDMI3
+# workspace "6:1"  output HDMI3
+# workspace "7:9"  output HDMI3
+# workspace "8:0"  output HDMI3
+# workspace "9:2"  output HDMI3
+# workspace "10:4" output HDMI3
+# workspace "11:6" output HDMI3
+# workspace "12:8" output HDMI3
+# workspace "13:#" output HDMI3
+
+#Workspaces
+set $ws1 "6:<small><i>1</i></small>:<big></big>"
+set $ws1 "6:<small><i>1</i></small>:<big></big>"
+set $ws2 "9:<small><i>2</i></small>: "
+set $ws3 "5:<small><i>3</i></small>:<big></big>"
+set $ws4 "10:<small><i>4</i></small>:<big></big>"
+set $ws5 "4:<small><i>5</i></small>:<big></big>"
+set $ws6 "11:<small><i>6</i></small>: "
+set $ws7 "3:<small><i>7</i></small>:<big></big> "
+set $ws8 "12:<small><i>8</i></small>: "
+set $ws9 "7:<small><i>9</i></small>: "
+set $ws0 "8:<small><i>0</i></small>: "
+set $ws# "13:<small><i>#</i></small>: "
+
+# switch to workspace
+# bindcode $myModC+$dollarC workspace "1:$"
+# bindcode $myModC+$ampC    workspace "2:&"
+bindcode $myModC+$sevenC  workspace $ws7
+bindcode $myModC+$fiveC   workspace $ws5
+bindcode $myModC+$threeC  workspace $ws3
+bindcode $myModC+$oneC    workspace $ws1
+bindcode $myModC+$nineC   workspace $ws9
+bindcode $myModC+$zeroC   workspace $ws0
+bindcode $myModC+$twoC    workspace $ws2
+bindcode $myModC+$fourC   workspace $ws4
+bindcode $myModC+$sixC    workspace $ws6
+bindcode $myModC+$eightC  workspace $ws8
+bindcode $myModC+$hashC   workspace $ws#
+
+# move focused container to workspace
+bindcode $myModC+Shift+$dollarC move workspace "1:$"
+bindcode $myModC+Shift+$ampC    move workspace "2:&"
+bindcode $myModC+Shift+$sevenC  move workspace "3:7"
+bindcode $myModC+Shift+$fiveC   move workspace "4:5"
+bindcode $myModC+Shift+$threeC  move workspace "5:3"
+bindcode $myModC+Shift+$oneC    move workspace "6:1"
+bindcode $myModC+Shift+$nineC   move workspace "7:9"
+bindcode $myModC+Shift+$zeroC   move workspace "8:0"
+bindcode $myModC+Shift+$twoC    move workspace "9:2"
+bindcode $myModC+Shift+$fourC   move workspace "10:4"
+bindcode $myModC+Shift+$sixC    move workspace "11:6"
+bindcode $myModC+Shift+$eightC  move workspace "12:8"
+bindcode $myModC+Shift+$hashC   move workspace "13:#"
+
+
+
+
+
+assign [class="^Thunderbird$"] $tag4
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h           resize shrink width 10 px or 10 ppt
+        bindsym k           resize grow height 10 px or 10 ppt
+        bindsym j           resize shrink height 10 px or 10 ppt
+        bindsym l	    resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar { position bottom
+#    status_command SCRIPT_DIR=$HOME/.config/i3/blocklets i3blocks -c $HOME/.config/i3/i3blocks.conf
+#}
+
+bar {
+    strip_workspace_numbers yes
+    colors {
+        background #111111
+        
+        focused_workspace #3EE888 #08A74D #ffFF85
+        # focused_workspace #222280 #008080 #ffffff
+        inactive_workspace #022710 #052513 #1C7C27
+        # inactive_workspace #222280 #000000 #005050
+        active_workspace #000000 #000000 #008080
+        urgent_workspace #8B0000 #8B0000 #000000
+    }
+
+    # font 
+
+    # font pango:mononoki Nerd Font
+    font pango:DejaVu Sans Mono for Powerline 8
+
+    status_command i3status
+    position top
+}
+
+#exec keynav
+#exec chromium &
+#exec sudo parcellite &
+#
+exec --no-startup-id i3-sensible-terminal -name quakelike -e ~/quakesession.sh
+for_window [instance="quakelike"] floating enable border pixel 2
+for_window [instance="quakelike"] resize set 1363 444;
+for_window [instance="quakelike"] move absolute position 3px 320px;
+for_window [instance="quakelike"] move scratchpad; [instance="quakelike"] scratchpad show; move scratchpad;
+bindsym $mod+u [instance="quakelike"] scratchpad show
+
