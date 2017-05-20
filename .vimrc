@@ -990,6 +990,8 @@ hi CursorLineNr ctermbg=none
 hi ColorColumn ctermbg=233
 hi Normal ctermbg=none
 hi Directory cterm=bold ctermfg=4
+hi Comment cterm=italic
+
 
 
 
@@ -1027,6 +1029,11 @@ nmap <S-h> :tabprevious<CR>
 nmap <S-l> :tabnext<CR>
 nmap <C-t> :tabnew<CR>
 
+noremap <silent> <C-h> :call WinMove('h')<CR>
+noremap <silent> <C-j> :call WinMove('j')<CR>
+noremap <silent> <C-k> :call WinMove('k')<CR>
+noremap <silent> <C-l> :call WinMove('l')<CR>
+
 " Navigate between WINDOWS
 function! WinMove(key)
     let t:curwin = winnr()
@@ -1041,10 +1048,7 @@ function! WinMove(key)
     endif
 endfunction
 
-map <silent> <C-h> :call WinMove('h')<CR>
-map <silent> <C-j> :call WinMove('j')<CR>
-map <silent> <C-k> :call WinMove('k')<CR>
-map <silent> <C-l> :call WinMove('l')<CR>
+
 
 " Resize windows
 noremap <silent> <F5> :resize -5<CR>

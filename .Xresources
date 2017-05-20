@@ -1,22 +1,27 @@
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 6 Sep 2014
-! -----------------------------------------------------------------------------
 Xft.dpi:                    96
 Xft.antialias:              false
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #000, #000, #000
+rofi.color-normal: #111, #819396, #222, #008ed4, #ffffff
+rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
+
+rofi.fake-transparency: true
+rofi.lines: 3
+rofi.bw: 0
+rofi.opacity: "10"
+rofi.hide-scrollbar: true
+rofi.width: 30
+
 !-------------------------------------------------------------------------------
 ! URxvt settings
-! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
-! More info at:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
-!-------------------------------------------------------------------------------
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
@@ -32,20 +37,12 @@ URxvt.saveLines:            5000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
-! Fonts
+! FONTS
 URxvt.allow_bold:           false
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-
-! :antialias=true:hinting=true
-! :antialias=true:hinting=true
-
-URxvt*font:           xft:mononoki Nerd Font:regular:size=9
-URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9
-URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9
-URxvt*boldItalicFont: xft:mononoki Nerd Font:italic:size=9
-
-! URxvt*boldFont: xft:DejaVu sans Mono:bold:size=9:antialias=true:hinting=true
-
+URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
+URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
+URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
 ! Fix font space
 URxvt*letterSpace: -1
 
@@ -59,21 +56,32 @@ URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          i3-sensible-browser
 
-
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #ff2734
-URxvt.cursorUnderline:      false
 
 ! Pointer
 URxvt.pointerBlank:         true
 
-! hard contrast: *background: #1d2021
-! *background: #282828
+! URxvt.perl-ext: default,url-select
+URxvt.perl-ext: default
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+! Cursor
+URxvt.cursorColor:          #ff2734
+URxvt.cursorUnderline:      false
+
 *background: [80]#012723
-! soft contrast: *background: #32302f
-! *foreground: #ebdbb2
 *foreground: #839496
+
 ! Black + DarkGrey
 *color0:  #282828
 *color8:  #928374
@@ -104,14 +112,7 @@ URxvt.pointerBlank:         true
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-! URxvt.perl-ext: default,url-select
-URxvt.perl-ext: default
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-
 URxvt.colorUL: #0168bb
-
 URXVT.colorIT: #87af5f
 URXVT.colorBD: #d7d7d7
 URXVT.colorUL: #87afd7

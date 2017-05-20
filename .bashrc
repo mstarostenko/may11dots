@@ -3,6 +3,9 @@
 #
 export EDITOR="vim"
 
+# Чтобы не срабатывал freezing терминала, когда нажимаешь ctrl + s
+stty -ixon
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -14,7 +17,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export PS1="\n\[\033[38;5;23m\]░░░░\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)$(tput smul)\]\[\033[38;5;23m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[48;5;0m\]\h\[$(tput sgr0)$(tput bold)\] \[\033[38;5;132m\]@\u\[$(tput sgr0)\]\033[38;5;137m\]╘$?\[$(tput sgr0)\]\n\[$(tput sgr0)\]\[\033[38;5;2m\]\W\[$(tput sgr0)$(tput bold)\]\[\033[38;5;28m\] >_ \[$(tput sgr0)\]"
+if [ -n "$TMUX" ]; then
+    echo 'TMUX 88 !!! sisiki'
+fi
+
+export PS1="\n\[\033[38;5;23m\]░░░░░\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)$(tput smul)\]\[\033[38;5;23m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[48;5;0m\]\h\[$(tput sgr0)$(tput dim)\] \[\033[38;5;125m\]\[$(tput sgr0)$(tput bold)\]\[\033[38;5;132m\]\u\[$(tput sgr0)\]\033[38;5;137m\]╘$?\[$(tput sgr0)\]\n\[$(tput sgr0)\]\[\033[38;5;2m\]\W\[$(tput sgr0)$(tput bold)\]\[\033[38;5;28m\] >_ \[$(tput sgr0)\]"
 
 # Extra many types of compressed packages
 # Credit: http://nparikh.org/notes/zshrc.txt

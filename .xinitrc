@@ -6,9 +6,6 @@ xset r rate 200 50
 xset b off
 xrdb $HOME/.Xresources
 
-exec compton &
-exec keynav &
-
 (
     if [[ -f ~/.wallpapers/screen_bg.jpg ]]; then
         feh --bg-scal ~/.wallpapers/screen_bg.jpg
