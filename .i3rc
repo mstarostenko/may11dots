@@ -274,7 +274,7 @@ mode "resize" {
         # make window look quakelike
         bindsym u           floating enable, resize set 1363 444, move absolute position 3px 320px, mode "default"
 
-        # bindsym minus       gaps inner current plus 5 TODO return
+        bindsym minus       gaps inner current plus 5
         bindsym plus        gaps inner current minus 5
 
         # back to normal: Enter or Escape
