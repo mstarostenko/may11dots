@@ -114,7 +114,7 @@ bash_prompt() {
     # extra backslash in front of \$ to make bash colorize the prompt
 
     # http://misc.flogisoft.com/bash/tip_colors_and_formatting
-    PS1="\n`                                                                                 # new line
+    PS1="\033[38;5;237m\]----------------------------------\n`                                                                                 # new line
 
             `${RC_CONTEXTBLUE}░░░░`                                                          # visual separator
             `\[$(tput sgr0)\] `                                                              # [ ] space

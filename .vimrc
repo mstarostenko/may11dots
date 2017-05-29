@@ -19,6 +19,9 @@ set termencoding=utf-8
 
 let mapleader = '-'
 
+" for guests
+set mouse=a
+
 
 
 
@@ -121,6 +124,8 @@ Plug 'vim-utils/vim-man'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+
+Plug 'bpstahlman/txtfmt'
 
 
 " Initialize plugin system
