@@ -127,6 +127,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'bpstahlman/txtfmt'
 
+Plug 'machakann/vim-highlightedyank'
+
+
 
 " Initialize plugin system
 call plug#end()
@@ -975,6 +978,9 @@ if executable('ag')
 endif
 
 
+let g:highlightedyank_highlight_duration = 400
+
+
 
 
 
@@ -1004,7 +1010,9 @@ hi Comment cterm=italic
 "┌──────────────┐
 "│   MAPPINGS   │
 "╞══════════════╡
-"
+
+map y <Plug>(highlightedyank)
+
 map ,; :NERDTreeToggle<CR>
 
 " NERDTree: reveal file in the tree

@@ -245,7 +245,17 @@ prompt_mod_dir() {
 }
 
 prompt_please_symbol() {
-    echo -n " %F{25}%f"
+    local mode_color=25
+
+    # if [[ $vim_mode=="[INS]" ]] {
+    #   mode_color=25
+    # }
+    #
+    # if [[ $vim_mode=="[CMD]" ]] {
+    #   mode_color=125
+    # }
+
+    echo -n " %F{$mode_color}%f"
 }
 
 prompt_instance_separator() {
@@ -269,6 +279,12 @@ prompt_exit_status() {
   [[ $RETVAL -eq 0 ]] && echo -n "%{%F{137}%}╘$RETVAL%f"
 }
 
+prompt_tmux_flag() {
+  [[ -n "$TMUX" ]] || return
+
+  echo -n " %F{0}%K{136}  %f%k"
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -278,6 +294,7 @@ build_prompt() {
   prompt_hostname
   prompt_username
   prompt_exit_status
+  prompt_tmux_flag
   echo -n "\n"
   prompt_mod_dir
 
@@ -290,4 +307,19 @@ build_prompt() {
   # prompt_hg
 }
 
+rprompt_history() {
+  echo -n '%F{23}%f%F{237}%!%f'
+}
+
+rprompt_jobs() {
+  [[ $(jobs -l | wc -l) -gt 0 ]] && echo -n ' %F{26}j%f%F{237}%j%f'
+}
+
+build_rprompt() {
+  # echo -n '%F{23}!%k%F{237}%!%F{23}J%f%j'
+  rprompt_history
+  rprompt_jobs
+}
+
+RPROMPT='%{%f%b%k%}$(build_rprompt)'
 PROMPT='%{%f%b%k%}$(build_prompt) '
