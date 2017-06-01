@@ -978,7 +978,7 @@ if executable('ag')
 endif
 
 
-let g:highlightedyank_highlight_duration = 400
+let g:highlightedyank_highlight_duration = 700
 
 
 

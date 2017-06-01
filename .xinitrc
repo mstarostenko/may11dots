@@ -6,11 +6,15 @@ export XMODIFIERS=@im=fcitx
 
 setxkbmap -layout us,ru -variant 'dvp,' ,winkeys -option grp:shifts_toggle,caps:escape,grp_led:scroll,terminate:ctrl_alt_bksp,compose:ralt
 
-xset r rate 200 50
 xset b off
+xset r rate 200 50
 xrdb $HOME/.Xresources
 
 
+# fcitx &
+
+setxkbmap -layout us,ru -variant 'dvp,' ,winkeys -option grp:shifts_toggle,caps:escape,grp_led:scroll,terminate:ctrl_alt_bksp,compose:ralt
+keynav &
 
 
 

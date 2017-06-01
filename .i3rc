@@ -173,6 +173,7 @@ set $fourC 18
 set $sixC 19
 set $eightC 20
 set $hashC 21
+set $sC 39
 
 # assign workspaces to screens
 # workspace "1:$"  output HDMI3
@@ -195,12 +196,12 @@ set $ws2 "9:<small><i>2</i></small>: "
 set $ws3 "5:<small><i>3</i></small>:<big></big>"
 set $ws4 "10:<small><i>4</i></small>:<big></big>"
 set $ws5 "4:<small><i>5</i></small>:<big></big>"
-set $ws6 "11:<small><i>6</i></small>: "
+set $ws6 "11:<small><i>6</i></small>:"
 set $ws7 "3:<small><i>7</i></small>:<big></big> "
 set $ws8 "12:<small><i>8</i></small>: "
-set $ws9 "7:<small><i>9</i></small>: "
-set $ws0 "8:<small><i>0</i></small>: "
-set $ws# "13:<small><i>#</i></small>: "
+set $ws9 "7:<small><i>9</i></small>:"
+set $ws0 "8:<small><i>0</i></small>:"
+set $wsSkype "14:<small><b>[S]</b></small>: "
 
 # switch to workspace
 # bindcode $myModC+$dollarC workspace "1:$"
@@ -215,7 +216,7 @@ bindcode $myModC+$twoC    workspace $ws2
 bindcode $myModC+$fourC   workspace $ws4
 bindcode $myModC+$sixC    workspace $ws6
 bindcode $myModC+$eightC  workspace $ws8
-bindcode $myModC+$hashC   workspace $ws#
+bindsym  $myModC+s        workspace $wsSkype
 
 # move focused container to workspace
 # bindcode $myModC+Shift+$dollarC move workspace "1:$"
@@ -230,11 +231,11 @@ bindcode $myModC+Shift+$twoC    move workspace $ws2
 bindcode $myModC+Shift+$fourC   move workspace $ws4
 bindcode $myModC+Shift+$sixC    move workspace $ws6
 bindcode $myModC+Shift+$eightC  move workspace $ws8
-bindcode $myModC+Shift+$hashC   move workspace $ws#
+bindcode $myModC+Shift+$hashC   move workspace $wsSkype
 
 bindsym $mod+comma              workspace prev
 bindsym $mod+period             workspace next
-bindsym $mod+Tab    workspace back_and_forth
+bindsym $mod+Tab                workspace back_and_forth
 
 
 
@@ -242,6 +243,7 @@ bindsym $mod+Tab    workspace back_and_forth
 
 # assign [class="^Thunderbird$"] $tag4
 assign [class="^Chromium$"] $ws7
+assign [class="^Skype$"]    $wsSkype
 # for_window [class="Chromium"] move to workspace $ws6
 
 
@@ -250,7 +252,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Выйти захотелось? (xsession будет закончена)' -b 'Да, выйти из сессии' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -295,7 +297,6 @@ bar {
     strip_workspace_numbers yes
     colors {
         background #111111
-        
         focused_workspace #3EE888 #08A74D #ffFF85
         inactive_workspace #022710 #052513 #1C7C27
         active_workspace #000000 #000000 #008080
@@ -316,20 +317,33 @@ for_window [instance="quakelike"] move absolute position 3px 320px;
 for_window [instance="quakelike"] move scratchpad; [instance="quakelike"] scratchpad show; move scratchpad;
 bindsym $mod+u [instance="quakelike"] scratchpad show
 
+
+
+
+
+#╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤
+#╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧
 #LETTER HOTKEYS
 bindsym $mod+e    exec i3-sensible-terminal -e ranger
 
-
-# AUTOSTART
-exec compton -b -i 0.6 -e 0.9
-exec keynav
-exec fcitx
-exec --no-startup-id chromium &
+#FN HOTKEYS
+bindsym Print               exec --no-startup-id scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f ~/Scrot/'
+bindsym Shift+Print         exec --no-startup-id scrot -u 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f ~/Scrot/'
 
 # POWER CONTROL HOTKEYS
 bindsym $mod+Shift+BackSpace    exec --no-startup-id sudo systemctl suspend
-
 bindsym $mod+Shift+Delete       exec sudo reboot
+for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
+#╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤╤
+#╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧╧
+#
+#
+#
+
+#
+# AUTOSTART
+exec compton -b -i 0.6 -e 0.9
+exec --no-startup-id chromium &
 
 
 

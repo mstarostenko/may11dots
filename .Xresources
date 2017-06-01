@@ -58,11 +58,6 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 URxvt*scrollTtyOutput:      false
 
-! Perl extensions
-URxvt.perl-ext-common:      default,matcher
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          i3-sensible-browser
-
 ! Cursor
 URxvt.cursorBlink:          true
 
@@ -70,10 +65,21 @@ URxvt.cursorBlink:          true
 URxvt.pointerBlank:         true
 
 ! URxvt.perl-ext: default,url-select
-URxvt.perl-ext: default
+URxvt.perl-ext-common: autocomplete-ALL-the-things,resize-font
 URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-slash:   perl:aAtt:word-complete
+URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+URxvt.keysym.M-quotedbl:  perl:aAtt:undo
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+! Perl extensions
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          i3-sensible-browser
+
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
