@@ -1,0 +1,13 @@
+Keymap = keymap
+Theme = theme
+#readtags = no
+QueueNextSongReturn = no
+FormatString = "%(n:%n :)%(t:%t:)%(a: \(by %a\):)%(A: \(in %A\):)"
+##%(A: \(%A\):)"
+
+MusicDir = /home/kulade/Music
+Fastdir1 = /home/kulade/Talks/Audiobooks
+Fastdir2 = /home/kulade/Talks/Lectures
+Fastdir3 = /home/kulade/Talks/Podcasts
+Fastdir4 = /home/kulade/Downloads
+Fastdir5 = /home/kulade/Creations
