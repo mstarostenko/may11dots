@@ -129,6 +129,18 @@ Plug 'bpstahlman/txtfmt'
 
 Plug 'machakann/vim-highlightedyank'
 
+" " [1] install 'ag' for vim
+" " Поисковка silver-search для vim
+Plug 'rking/ag.vim'
+
+" " [2] install 'ag' for NERD-TREE
+" " Поисковка silver-search для nerd-tree
+Plug 'taiansu/nerdtree-ag'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'digitaltoad/vim-pug'
+
 
 
 " Initialize plugin system
