@@ -310,7 +310,7 @@ bar {
 }
 
 # SCRATCHPAD quakelike window
-exec --no-startup-id i3-sensible-terminal -name quakelike -e ~/quakesession.sh
+exec --no-startup-id i3-sensible-terminal --hold -name quakelike -e ~/.Scripts/quakesession.sh
 for_window [instance="quakelike"] floating enable border pixel 2
 for_window [instance="quakelike"] resize set 1363 444;
 for_window [instance="quakelike"] move absolute position 3px 320px;
@@ -342,8 +342,9 @@ for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shr
 
 #
 # AUTOSTART
-exec compton -b -i 0.6 -e 0.9
+exec compton -b -i 0.6 -e 0.9 --backend xrender
 exec --no-startup-id chromium &
+exec parcellite &
 
 
 

@@ -15,8 +15,8 @@ then
     tmux send-keys -t quakesession:0 'cd ~' C-m
     tmux send-keys -t quakesession:0 'clear' C-m
 
-    tmux send-keys -t quakesession:1 'cd ~/Documents/' C-m
-    tmux send-keys -t quakesession:1 'vim ideasBacklog.txt' C-m
+    tmux send-keys -t quakesession:1 'cd ~/Documents/may11docs' C-m
+    tmux send-keys -t quakesession:1 'vim JOBS/' C-m
 
     tmux send-keys -t quakesession:2 'pulsemixer' C-m
 
