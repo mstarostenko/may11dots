@@ -22,6 +22,8 @@ let mapleader = '-'
 " for guests
 set mouse=a
 
+set lazyredraw
+
 
 
 
