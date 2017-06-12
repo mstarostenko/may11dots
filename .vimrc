@@ -143,6 +143,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'digitaltoad/vim-pug'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 
 
 " Initialize plugin system
@@ -1037,6 +1039,8 @@ nmap <C-t> :tabnew<CR>
 " Search & Highlight symbol (Easy Motion)
 nmap s <Plug>(easymotion-s)
 
+noremap <c-f> :FZF ~/projects/shop<CR>
+
 " Save document
 noremap <silent> <c-s> :update<CR>
 inoremap <silent> <c-s> <c-c>:update<CR>
@@ -1179,3 +1183,21 @@ vmap <C-c> :w! ~/.vimbuffer<CR>
 nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
+
+
+" Check if NERDTree is open or active
+" function! MaxIsNERDTreeOpen()
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+" function! MaxSyncTree()
+"   if &modifiable && MaxIsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"     NERDTreeFind
+"     wincmd p
+"   endif
+" endfunction
+
+" Highlight currently open buffer in NERDTree
+" autocmd BufEnter * call MaxSyncTree()
