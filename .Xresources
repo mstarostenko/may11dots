@@ -46,10 +46,10 @@ URxvt.lineSpace:            0
 
 ! FONTS
 URxvt.allow_bold:           false
-URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
-URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
-URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
+URxvt*font:           xft:mononoki Nerd Font:regular:size=10:antialias=true:hinting=true
+URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=10:antialias=true:hinting=true
+URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=10:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=10:antialias=true:hinting=true
 ! Fix font space
 URxvt*letterSpace: -1
 
@@ -64,14 +64,19 @@ URxvt.cursorBlink:          true
 ! Pointer
 URxvt.pointerBlank:         true
 
+! _____________________________________________________________________________
 ! URxvt.perl-ext: default,url-select
-URxvt.perl-ext-common: autocomplete-ALL-the-things,resize-font
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-slash:   perl:aAtt:word-complete
-URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
-URxvt.keysym.M-quotedbl:  perl:aAtt:undo
+URxvt.perl-ext-common: autocomplete-ALL-the-things,resize-font,url-select
+
+! URL select
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_prev
+
+URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
+URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+URxvt.keysym.M-quotedbl:  perl:aAtt:undo
+
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
@@ -79,6 +84,7 @@ URxvt.resize-font.bigger: C-Up
 ! Perl extensions
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          i3-sensible-browser
+! _____________________________________________________________________________
 
 
 ! -----------------------------------------------------------------------------
@@ -92,7 +98,7 @@ URxvt.urlLauncher:          i3-sensible-browser
 URxvt.cursorColor:          #ff2734
 URxvt.cursorUnderline:      false
 
-*background: [80]#012723
+*background: [65]#012723
 *foreground: #839496
 
 ! Black + DarkGrey

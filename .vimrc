@@ -143,6 +143,12 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'digitaltoad/vim-pug'
 
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+Plug 'kshenoy/vim-signature'
+
+
 
 
 " Initialize plugin system
@@ -953,8 +959,9 @@ inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 " [[Ultisnips]]
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<nop>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-m>"
+
 " ----------------------
 
 
@@ -1058,25 +1065,6 @@ nmap <S-h> :tabprevious<CR>
 nmap <S-l> :tabnext<CR>
 nmap <C-t> :tabnew<CR>
 
-noremap <silent> <C-h> :call WinMove('h')<CR>
-noremap <silent> <C-j> :call WinMove('j')<CR>
-noremap <silent> <C-k> :call WinMove('k')<CR>
-noremap <silent> <C-l> :call WinMove('l')<CR>
-
-" Navigate between WINDOWS
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key, '[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
-endfunction
-
 
 
 " Resize windows
@@ -1116,7 +1104,37 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Advanced customization using autoload functions
 " inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'}))>
+"
+" mK -- следующая по алфавиту
+" mJ -- предыдущая по алфавиту
+" mK -- следующая по порядку
+" mJ -- предыдущая по порядку
+let g:SignatureMap = {
+\ 'Leader'             :  "m",
+\ 'PlaceNextMark'      :  "m,",
+\ 'ToggleMarkAtLine'   :  "m.",
+\ 'PurgeMarksAtLine'   :  "m-",
+\ 'DeleteMark'         :  "dm",
+\ 'PurgeMarks'         :  "m<Space>",
+\ 'PurgeMarkers'       :  "m<BS>",
+\ 'GotoNextLineAlpha'  :  "mK",
+\ 'GotoPrevLineAlpha'  :  "mJ",
+\ 'GotoNextSpotAlpha'  :  "`]",
+\ 'GotoPrevSpotAlpha'  :  "`[",
+\ 'GotoNextLineByPos'  :  "mk",
+\ 'GotoPrevLineByPos'  :  "mj",
+\ 'GotoNextSpotByPos'  :  "]`",
+\ 'GotoPrevSpotByPos'  :  "[`",
+\ 'GotoNextMarker'     :  "]-",
+\ 'GotoPrevMarker'     :  "[-",
+\ 'GotoNextMarkerAny'  :  "]=",
+\ 'GotoPrevMarkerAny'  :  "[=",
+\ 'ListBufferMarks'    :  "m/",
+\ 'ListBufferMarkers'  :  "m?"
+\ }
 
+" expect j k J K for vim binding interaction
+let g:SignatureIncludeMarks = 'abcdefghilmnopqrstuvwxyzABCDEFGHILMNOPQRSTUVWXYZ'
 
 
 
@@ -1181,3 +1199,53 @@ vmap <C-c> :w! ~/.vimbuffer<CR>
 nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
+
+
+
+
+
+
+
+
+
+nnoremap <silent> <A-h> <C-w><
+nnoremap <silent> <A-k> <C-w>-
+nnoremap <silent> <A-j> <C-w>+
+nnoremap <silent> <A-l> <C-w>>
+function! Altmap(char)
+  if has('gui_running') | return ' <A-'.a:char.'> ' | else | return ' <Esc>'.a:char.' '|endif
+endfunction
+if $TERM == 'rxvt-unicode-256color'&&!has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    autocmd InsertEnter * set timeoutlen=0
+    autocmd InsertLeave * set timeoutlen=2000
+  augroup END
+
+  execute 'nnoremap <silent>'.Altmap('h').'<C-w> :call WinMove(\'h\')'
+  execute 'nnoremap <silent>'.Altmap('k').'<C-w> :call WinMove(\'k\')'
+  execute 'nnoremap <silent>'.Altmap('j').'<C-w> :call WinMove(\'j\')'
+  execute 'nnoremap <silent>'.Altmap('l').'<C-w> :call WinMove(\'l\')'
+
+endif
+
+
+noremap <silent> <C-h> :call WinMove('h')<CR>
+noremap <silent> <C-j> :call WinMove('j')<CR>
+noremap <silent> <C-k> :call WinMove('k')<CR>
+noremap <silent> <C-l> :call WinMove('l')<CR>
+
+" Navigate between WINDOWS
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key, '[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
