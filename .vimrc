@@ -148,6 +148,7 @@ Plug 'honza/vim-snippets'
 
 Plug 'kshenoy/vim-signature'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 
@@ -1044,7 +1045,7 @@ nmap <C-t> :tabnew<CR>
 " Search & Highlight symbol (Easy Motion)
 nmap s <Plug>(easymotion-s)
 
-noremap <C-f> :FZF ~/projects/shop<CR>
+noremap <c-f> :FZF ~/projects/shop<CR>
 
 " Save document
 noremap <silent> <c-s> :update<CR>
@@ -1208,44 +1209,61 @@ map <C-p> :r ~/.vimbuffer<CR>
 
 
 
-nnoremap <silent> <A-h> <C-w><
-nnoremap <silent> <A-k> <C-w>-
-nnoremap <silent> <A-j> <C-w>+
-nnoremap <silent> <A-l> <C-w>>
-function! Altmap(char)
-  if has('gui_running') | return ' <A-'.a:char.'> ' | else | return ' <Esc>'.a:char.' '|endif
-endfunction
-if $TERM == 'rxvt-unicode-256color'&&!has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    autocmd InsertEnter * set timeoutlen=0
-    autocmd InsertLeave * set timeoutlen=2000
-  augroup END
+" nnoremap <silent> <A-h> <C-w><
+" nnoremap <silent> <A-k> <C-w>-
+" nnoremap <silent> <A-j> <C-w>+
+" nnoremap <silent> <A-l> <C-w>>
+" function! Altmap(char)
+"   if has('gui_running') | return ' <A-'.a:char.'> ' | else | return ' <Esc>'.a:char.' '|endif
+" endfunction
+" if $TERM == 'rxvt-unicode-256color'&&!has('gui_running')
+"   set ttimeoutlen=10
+"   augroup FastEscape
+"     autocmd!
+"     autocmd InsertEnter * set timeoutlen=0
+"     autocmd InsertLeave * set timeoutlen=2000
+"   augroup END
+"
+"   execute 'nnoremap <silent>'.Altmap('h').'<C-w> :call WinMove(\'h\')'
+"   execute 'nnoremap <silent>'.Altmap('k').'<C-w> :call WinMove(\'k\')'
+"   execute 'nnoremap <silent>'.Altmap('j').'<C-w> :call WinMove(\'j\')'
+"   execute 'nnoremap <silent>'.Altmap('l').'<C-w> :call WinMove(\'l\')'
+"
+" endif
+"
+"
+" noremap <silent> <C-h> :call WinMove('h')<CR>
+" noremap <silent> <C-j> :call WinMove('j')<CR>
+" noremap <silent> <C-k> :call WinMove('k')<CR>
+" noremap <silent> <C-l> :call WinMove('l')<CR>
+"
+" " Navigate between WINDOWS
+" function! WinMove(key)
+"     let t:curwin = winnr()
+"     exec "wincmd ".a:key
+"     if (t:curwin == winnr())
+"         if (match(a:key, '[jk]'))
+"             wincmd v
+"         else
+"             wincmd s
+"         endif
+"         exec "wincmd ".a:key
+"     endif
+" endfunction
 
-  execute 'nnoremap <silent>'.Altmap('h').'<C-w> :call WinMove(\'h\')'
-  execute 'nnoremap <silent>'.Altmap('k').'<C-w> :call WinMove(\'k\')'
-  execute 'nnoremap <silent>'.Altmap('j').'<C-w> :call WinMove(\'j\')'
-  execute 'nnoremap <silent>'.Altmap('l').'<C-w> :call WinMove(\'l\')'
+" Check if NERDTree is open or active
+" function! MaxIsNERDTreeOpen()
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
 
-endif
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+" function! MaxSyncTree()
+"   if &modifiable && MaxIsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"     NERDTreeFind
+"     wincmd p
+"   endif
+" endfunction
 
-
-noremap <silent> <C-h> :call WinMove('h')<CR>
-noremap <silent> <C-j> :call WinMove('j')<CR>
-noremap <silent> <C-k> :call WinMove('k')<CR>
-noremap <silent> <C-l> :call WinMove('l')<CR>
-
-" Navigate between WINDOWS
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key, '[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
-endfunction
+" Highlight currently open buffer in NERDTree
+" autocmd BufEnter * call MaxSyncTree()
