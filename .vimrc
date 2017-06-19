@@ -148,7 +148,6 @@ Plug 'honza/vim-snippets'
 Plug 'kshenoy/vim-signature'
 
 
-
 " Initialize plugin system
 call plug#end()
 
@@ -956,9 +955,12 @@ inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 " [[Ultisnips]]
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger="<nop>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-m>"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " ----------------------
 
@@ -1066,11 +1068,10 @@ nmap <C-t> :tabnew<CR>
 
 
 " Resize windows
-noremap <silent> <F5> :resize -5<CR>
-noremap <silent> <F6> :resize +5<CR>
-noremap <silent> <F7> :vertical resize -5<CR>
-noremap <silent> <F8> :vertical resize +5<CR>
-
+nnoremap <silent> <F5> :resize -5<CR>
+nnoremap <silent> <F6> :resize +5<CR>
+nnoremap <silent> <F7> :vertical resize -5<CR>
+nnoremap <silent> <F8> :vertical resize +5<CR>
 
 " Expand-region
 vmap v <Plug>(expand_region_expand)
@@ -1078,6 +1079,11 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 " Backlog hotkeys
 " nnoremap ,yf :let @"=expand("%:p")<CR>    " Mnemonic: Copy File path
+"
+" TODO maximixize expect NERDTREE BAR
+" alt + f -- fullmode
+" alt + F -- fullmode and NERDTREE collapse
+" + localstorage (f + f -- maximize and go back to previos)
 "
 " Maximize current window
 " map <F10> <C-W>_<C-W><Bar>
@@ -1089,6 +1095,9 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " nmap tf :TernRefs<CR>
 "
 
+
+" [[mappings: Ultisnips]]
+"
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -1099,6 +1108,7 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-completeath)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 
 " Advanced customization using autoload functions
 " inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'}))>
