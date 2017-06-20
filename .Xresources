@@ -66,12 +66,12 @@ URxvt.pointerBlank:         true
 
 ! _____________________________________________________________________________
 ! URxvt.perl-ext: default,url-select
-URxvt.perl-ext-common: autocomplete-ALL-the-things,resize-font,url-select
+URxvt.perl-ext-common: default,autocomplete-ALL-the-things,resize-font,url-select
 
 ! URL select
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
-URxvt.keysym.M-u: perl:url-select:select_prev
+URxvt.keysym.M-u: perl:url-select:select_next
 
 URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
 URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete

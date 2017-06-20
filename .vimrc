@@ -1232,24 +1232,24 @@ map <C-p> :r ~/.vimbuffer<CR>
 " endif
 "
 "
-" noremap <silent> <C-h> :call WinMove('h')<CR>
-" noremap <silent> <C-j> :call WinMove('j')<CR>
-" noremap <silent> <C-k> :call WinMove('k')<CR>
-" noremap <silent> <C-l> :call WinMove('l')<CR>
-"
-" " Navigate between WINDOWS
-" function! WinMove(key)
-"     let t:curwin = winnr()
-"     exec "wincmd ".a:key
-"     if (t:curwin == winnr())
-"         if (match(a:key, '[jk]'))
-"             wincmd v
-"         else
-"             wincmd s
-"         endif
-"         exec "wincmd ".a:key
-"     endif
-" endfunction
+noremap <silent> <C-h> :call WinMove('h')<CR>
+noremap <silent> <C-j> :call WinMove('j')<CR>
+noremap <silent> <C-k> :call WinMove('k')<CR>
+noremap <silent> <C-l> :call WinMove('l')<CR>
+
+" Navigate between WINDOWS
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key, '[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
 
 " Check if NERDTree is open or active
 " function! MaxIsNERDTreeOpen()
