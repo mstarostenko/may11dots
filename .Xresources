@@ -29,6 +29,8 @@ rofi.width: 30
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
+!
+URxvt*termName:rxvt-unicode-256color
 
 URxvt.depth:                32
 URxvt.geometry:             90x30

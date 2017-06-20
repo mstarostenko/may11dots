@@ -143,6 +143,8 @@ alias cdd="cd ~/Documents/may11docs"
 # @todo if folder exist condition
 alias cdp="cd ~/projects"
 
+alias urxvt="urxvt -tn rxvt"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
