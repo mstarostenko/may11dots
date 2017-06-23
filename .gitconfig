@@ -16,5 +16,6 @@
     type = cat-file -t
     dump = cat-file -p
     pr = "!f() { branch=`git rev-parse --abbrev-ref HEAD`; git pull --rebase origin $branch;  }; f"
+    showb = "rev-parse --abbrev-ref HEAD"
 [core]
     editor = vim

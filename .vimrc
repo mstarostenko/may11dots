@@ -125,7 +125,6 @@ Plug 'exdis/vim-clevertab', 'ultisnips-expand-or-jump-setting'
 Plug 'vim-utils/vim-man'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
 
 Plug 'bpstahlman/txtfmt'
 
@@ -147,8 +146,6 @@ Plug 'digitaltoad/vim-pug'
 Plug 'honza/vim-snippets'
 
 Plug 'kshenoy/vim-signature'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 
