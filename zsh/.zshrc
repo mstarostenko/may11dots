@@ -146,6 +146,9 @@ alias cdp="cd ~/projects"
 alias urxvt="urxvt -tn rxvt"
 alias cdD="cd ~/Downloads"
 
+# Всегда с verbose output, для очевидности присваивания ссылок
+alias ln="ln -v"
+
 alias dm="/usr/bin/networkmanager_dmenu"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
