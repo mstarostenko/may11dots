@@ -165,3 +165,14 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+fasd_cache="$HOME/.fasd-init-zsh"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install>| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
+
+alias v='f -e vim' # quick opening files with vim
+alias m='f -e mplayer' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
