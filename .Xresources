@@ -26,6 +26,7 @@ rofi.bw: 0
 rofi.opacity: "10"
 rofi.hide-scrollbar: true
 rofi.width: 30
+rofi.height: 300
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -57,7 +58,7 @@ URxvt*letterSpace: -1
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
-URxvt.scrollBar:            false
+URxvt.scrollBar:            true
 URxvt*scrollTtyOutput:      false
 
 ! Cursor
@@ -137,3 +138,21 @@ URxvt.colorUL: #0168bb
 URXVT.colorIT: #87af5f
 URXVT.colorBD: #d7d7d7
 URXVT.colorUL: #87afd7
+
+!scrollbar
+!
+! enable scrollbar
+URxvt*scrollBar:          true
+! scrollbar width
+URxvt*thickness:          6
+! scrollbar color
+URxvt*scrollColor:        #003331
+! scrollbar trough area color
+! URxvt*troughColor:        #333333
+! scrollbar without a trough
+!URxvt*scrollBar_floating: false
+! scrollbar to the right
+URxvt*scrollBar_right:    true
+! scrollbar style
+URxvt*scrollstyle:        plain
+

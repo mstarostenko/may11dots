@@ -144,8 +144,15 @@ alias cdd="cd ~/Documents/may11docs"
 alias cdp="cd ~/projects"
 
 alias urxvt="urxvt -tn rxvt"
+alias cdD="cd ~/Downloads"
+
+alias dm="/usr/bin/networkmanager_dmenu"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ]   && source /usr/share/fzf/completion.zsh
+
 
 
 man() {

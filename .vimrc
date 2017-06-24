@@ -34,6 +34,8 @@ set lazyredraw
 "
 call plug#begin('~/.vim/plugged')
 
+Plug 'scrooloose/syntastic'
+
 Plug 'scrooloose/nerdtree'
 
 " ---- plugins: ------------
@@ -146,6 +148,9 @@ Plug 'digitaltoad/vim-pug'
 Plug 'honza/vim-snippets'
 
 Plug 'kshenoy/vim-signature'
+
+" Prefer local repo install of eslint over global install with syntastic
+Plug 'mtscout6/syntastic-local-eslint.vim'
 
 
 " Initialize plugin system
@@ -1274,3 +1279,6 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 " autocmd BufEnter * call MaxSyncTree()
+
+let g:syntastic_javascript_eslint_exec = '~/.vim/node_modules/.bin/eslint'
+let g:syntastic_javascript_checkers = ['eslint']
