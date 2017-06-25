@@ -156,7 +156,7 @@ set $wsSkype "14:<small><b>[S]</b></small>: "
 # ╞═══════════════════════════════╡
 #
 # GO to the SPECIFIC workspace
-bindsym  $mod+7  workspace $ws9
+bindsym  $mod+7  workspace $ws7
 bindsym  $mod+5  workspace $ws5
 bindsym  $mod+3  workspace $ws3
 bindsym  $mod+1  workspace $ws1
@@ -174,18 +174,17 @@ bindsym $mod+period             workspace next
 bindsym $mod+Tab                workspace back_and_forth
 
 # MOVE the focused CONTAINER to the SPECIFIC workspace
-bindcode $myModC+Shift+$sevenC  move workspace $ws7
-bindcode $myModC+Shift+$fiveC   move workspace $ws5
-bindcode $myModC+Shift+$threeC  move workspace $ws3
-bindcode $myModC+Shift+$oneC    move workspace $ws1
-bindcode $myModC+Shift+$nineC   move workspace $ws9
-bindcode $myModC+Shift+$zeroC   move workspace $ws0
-bindcode $myModC+Shift+$twoC    move workspace $ws2
-bindcode $myModC+Shift+$fourC   move workspace $ws4
-bindcode $myModC+Shift+$sixC    move workspace $ws6
-bindcode $myModC+Shift+$eightC  move workspace $ws8
-bindcode $myModC+Shift+$hashC   move workspace $wsSkype
-
+bindsym $mod+Shift+7 move workspace $ws7
+bindsym $mod+Shift+5 move workspace $ws5
+bindsym $mod+Shift+3 move workspace $ws3
+bindsym $mod+Shift+1 move workspace $ws1
+bindsym $mod+Shift+9 move workspace $ws9
+bindsym $mod+Shift+0 move workspace $ws0
+bindsym $mod+Shift+2 move workspace $ws2
+bindsym $mod+Shift+4 move workspace $ws4
+bindsym $mod+Shift+6 move workspace $ws6
+bindsym $mod+Shift+8 move workspace $ws8
+bindsym $mod+Shift+s move workspace $wsSkype
 
 # ┌───────────────────────────────┐
 # │ WORKSPACES: monitor assign    │
@@ -198,7 +197,7 @@ bindcode $myModC+Shift+$hashC   move workspace $wsSkype
 # │ WORKSPACES: app assign        │
 # ╞═══════════════════════════════╡
 
-# worspaces:      | 7 | 5 | 3 | 1 | 9 |             0 | 2 | 4 | 6 | 8 | s |
+# workspaces:     | 7 | 5 | 3 | 1 | 9 |             0 | 2 | 4 | 6 | 8 | s |
 
 #-----------------|ws7|---------------------    -------------------------------
 assign [class="^Chromium$"]       $ws7
