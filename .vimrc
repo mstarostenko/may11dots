@@ -1049,7 +1049,7 @@ nmap <C-t> :tabnew<CR>
 " Search & Highlight symbol (Easy Motion)
 nmap s <Plug>(easymotion-s)
 
-noremap <c-f> :FZF ~/projects/shop<CR>
+noremap <c-f> :FZF ~/project/shop<CR>
 
 " Save document
 noremap <silent> <c-s> :update<CR>
