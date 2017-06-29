@@ -100,7 +100,14 @@ URxvt.urlLauncher:          i3-sensible-browser
 URxvt.cursorColor:          #ff2734
 URxvt.cursorUnderline:      false
 
-*background: [65]#012723
+! *background: [65]#012723
+! 122623
+! *background: [65]#0e2421
+! *background: [75]#182927
+!
+! 1c3b36
+!233b37 --good
+*background: [70]#1c3b36
 *foreground: #839496
 
 ! Black + DarkGrey

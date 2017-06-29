@@ -747,7 +747,7 @@ let g:DevIconsDefaultFolderOpenSymbol = ' '
 
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 
 " NERDTress File highlighting
@@ -1026,7 +1026,7 @@ let g:gruvbox_contrast_dark="soft"
 hi CursorLineNr ctermbg=none
 hi ColorColumn ctermbg=233
 hi Normal ctermbg=none
-hi Directory cterm=bold ctermfg=4
+hi Directory cterm=bold ctermfg=33
 hi Comment cterm=italic
 
 
@@ -1049,7 +1049,7 @@ nmap <C-t> :tabnew<CR>
 " Search & Highlight symbol (Easy Motion)
 nmap s <Plug>(easymotion-s)
 
-noremap <c-f> :FZF ~/project/shop<CR>
+noremap <c-f> :FZF ~/project<CR>
 
 " Save document
 noremap <silent> <c-s> :update<CR>
