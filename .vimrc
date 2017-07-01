@@ -18,6 +18,7 @@ set encoding=utf-8
 set termencoding=utf-8
 
 let mapleader = '-'
+let maplocalleader = ","
 
 " for guests
 set mouse=a
@@ -107,7 +108,9 @@ Plug 'jszakmeister/vim-togglecursor'
 " DEV ICONS
 Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-        Plug 'KabbAmine/vCoolor.vim'
+
+" Color Picker
+Plug 'KabbAmine/vCoolor.vim'
 
 " CtrlP-Funky
 Plug 'tacahiroy/ctrlp-funky'
@@ -151,6 +154,13 @@ Plug 'kshenoy/vim-signature'
 
 " Prefer local repo install of eslint over global install with syntastic
 Plug 'mtscout6/syntastic-local-eslint.vim'
+
+" Vim org plugin
+Plug 'jceb/vim-orgmode'
+
+    Plug 'mattn/calendar-vim'
+
+    Plug 'tpope/vim-speeddating'
 
 
 " Initialize plugin system
@@ -733,6 +743,7 @@ nnoremap <Leader>r :CtrlPFunky<Cr>
 
 let g:NERDTreeDirArrowExpandable = '├'
 let g:NERDTreeDirArrowCollapsible = '└'
+let NERDTreeMouseMode=2
 
 
 
@@ -748,6 +759,9 @@ let g:DevIconsDefaultFolderOpenSymbol = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:webdevicons_conceal_nerdtree_brackets = 1
 " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 
 
 " NERDTress File highlighting
@@ -1208,10 +1222,10 @@ cnoreabbrev qq! tabclose!
 " <C-W> T - open current window in separately split
 
 " copy to buffer
-vmap <C-c> :w! ~/.vimbuffer<CR>
-nmap <C-c> :.w! ~/.vimbuffer<CR>
+" vmap <C-c> :w! ~/.vimbuffer<CR>
+" nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
-map <C-p> :r ~/.vimbuffer<CR>
+" map <C-p> :r ~/.vimbuffer<CR>
 
 
 
@@ -1282,3 +1296,5 @@ endfunction
 
 let g:syntastic_javascript_eslint_exec = '~/.vim/node_modules/.bin/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
+
+" autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
