@@ -18,7 +18,7 @@ set encoding=utf-8
 set termencoding=utf-8
 
 let mapleader = '-'
-let maplocalleader = ","
+" let maplocalleader = ","
 
 " for guests
 set mouse=a
