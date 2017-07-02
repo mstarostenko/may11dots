@@ -141,7 +141,7 @@ alias clr="clear"
 #
 # go to organize
 alias cdo="cd ~/Documents/may11docs"
-alias cdd="cd ~/may11dots"
+alias cdd="cd ~/.dotfiles"
 alias cdp="cd ~/projects"
 
 alias cdD="cd ~/Downloads"
