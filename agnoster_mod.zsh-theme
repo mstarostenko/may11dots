@@ -301,7 +301,7 @@ build_prompt() {
   # prompt_virtualenv
   # prompt_context
   # prompt_dir
-  # prompt_git
+  prompt_git
   prompt_please_symbol
   # prompt_bzr
   # prompt_hg
