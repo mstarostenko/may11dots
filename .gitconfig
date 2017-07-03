@@ -1,6 +1,6 @@
 [user]
     name = Maxim Starostenko
-    email = m.starostenko@office.ngs.ru
+    email = m.starostenko@e2e4online.ru
 [alias]
     ec = config --global -e
     co = checkout
