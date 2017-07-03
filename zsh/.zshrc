@@ -131,20 +131,24 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 alias r="ranger"
+
 alias cl="clear"
 alias cle="clear"
+alias cler="clear"
+alias clr="clear"
 
-# @todo if folder exist condition
-alias cdc="cd ~/may11dots"
-
-# @todo if folder exist condition
-alias cdd="cd ~/Documents/may11docs"
-
-# @todo if folder exist condition
+# GOTO ALIASES
+#
+# go to organize
+alias cdo="cd ~/Documents/may11docs"
+alias cdd="cd ~/.dotfiles"
 alias cdp="cd ~/projects"
 
-alias urxvt="urxvt -tn rxvt"
 alias cdD="cd ~/Downloads"
+alias cdT="cd ~/.local/share/Trash"
+
+
+# alias urxvt="urxvt -tn rxvt"
 
 # Всегда с verbose output, для очевидности присваивания ссылок
 alias ln="ln -v"
