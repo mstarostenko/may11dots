@@ -162,6 +162,11 @@ Plug 'jceb/vim-orgmode'
 
     Plug 'tpope/vim-speeddating'
 
+Plug 'airblade/vim-gitgutter'
+
+Plug 'roman/golden-ratio'
+
+Plug 'tpope/tpope-vim-abolish'
 
 " Initialize plugin system
 call plug#end()
@@ -309,7 +314,7 @@ set list
 set listchars=tab:→\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 
 " Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead just 'foo'
-set iskeyword+=
+set iskeyword+=-
 
 " Disable backups file
 set nobackup

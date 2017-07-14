@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# @todo dynamic ruby folder variable
+export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/mstarostenko/.oh-my-zsh
@@ -146,6 +148,31 @@ alias cdp="cd ~/projects"
 
 alias cdD="cd ~/Downloads"
 alias cdT="cd ~/.local/share/Trash"
+
+# todo все вариации из флагов -- в алиасы перегнать
+# в скрипт генерирующий такие алиасы
+alias lc='colorls'
+alias lcl='colorls  -l'
+
+alias lcd='colorls  -d    -1 -sd -r'
+alias lcda='colorls -d -A -1 -sd -r'
+alias lcdal='colorls -d -A -1 -sd -r'
+
+alias lcf='colorls  -f    -1 -sf -r'
+
+alias lca='colorls     -A -1 -sd -r'
+alias lca='colorls     -A -1 -sd -r'
+alias lcad='colorls -d -A -1 -sd -r'
+alias lcaf='colorls -f -A -1 -sf -r'
+alias lcafl='colorls -l -f -A -1 -sf -r'
+
+alias lcla='colorls -l -A -1 -sd -r'
+alias lcal='colorls -l -A -1 -sd -r'
+# alias lcafl=
+
+
+alias llc='colorls        -1 -sd -r'
+alias llcl='colorls -l    -1 -sd -r'
 
 
 # alias urxvt="urxvt -tn rxvt"

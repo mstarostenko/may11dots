@@ -1,9 +1,7 @@
 #!/bin/sh
 
 if [ "${TERM%%-*}" = "screen" ]; then
-echo '0';
   if [ -n "$TMUX" ]; then
-    echo '1';
     printf "\033Ptmux;\033\033]4;236;rgb:32/30/2f\007\033\\"
     printf "\033Ptmux;\033\033]4;234;rgb:1d/20/21\007\033\\"
 
@@ -41,7 +39,6 @@ echo '0';
     printf "\033Ptmux;\033\033]4;66;rgb:42/7b/58\007\033\\"
     printf "\033Ptmux;\033\033]4;130;rgb:af/3a/03\007\033\\"
   else
-    echo '2';
     printf "\033P\033]4;236;rgb:32/30/2f\007\033\\"
     printf "\033P\033]4;234;rgb:1d/20/21\007\033\\"
 
@@ -81,8 +78,6 @@ echo '0';
   fi
 
 elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ]; then
-    echo '3';
-
   printf "\033]4;236;rgb:32/30/2f\033\\"
   printf "\033]4;234;rgb:1d/20/21\033\\"
 
