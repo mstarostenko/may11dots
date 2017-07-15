@@ -1217,13 +1217,48 @@ cnoreabbrev qq! tabclose!
 "
 "   filtering text through external filters
 "   Visual mode -> select block -> :<block> ! <external filter>
-"
+
 " SEARCH:
-" ggn            - go to the first match
-" GN            - go to the first match
+" ggn                                  - go to the first match
+" GN                                   - go to the first match
 "
-" :%s//new/g     - (after searching) change all occurences to 'new'
+" :%s//new/g                           - (after searching) change all occurences to 'new'
+
+" EX LINES:
+" > SHOW INFO 
 "
+" :g/pattern/z#.5                      -- Display context (5 lines) for all occurrences of a pattern.
+" :g/pattern/z#.5|echo "=========="    -- Same, but with some beautification.
+
+
+" > DELETE
+" :g/pattern/d                         -- Delete all lines matching a pattern.
+" :g!/pattern/d                        -- Delete all lines that do not match a pattern.
+" :v/pattern/d                         -- The commands shown are equivalent (v is "inverse").
+
+" :g/^\s*$/d                           -- Delete all blank lines (^ is start of line; \s* is zero or more whitespace characters; $ is end of line)
+
+" > ADD TEXT
+" :g/^pattern/s/$/mytext
+
+" > COPY/MOVE
+" :g/pattern/t$                        -- COPY all lines matching a pattern to end of file.
+" :g/pattern/m$                        -- MOVE all lines matching a pattern to end of file.
+
+" qaq:g/pattern/y A
+" Explanation: 
+" qaq is a trick to clear register a (qa starts recording a macro to register a,
+" then q stops recording, leaving a empty). y A is an Ex command (:help :y). 
+" It yanks the current line into register A (append to register a).
+"
+"
+" ------------------- VIM TIPS END -----------------------
+" --------------------------------------------------------
+
+
+
+
+
 " <C-W> T - open current window in separately split
 
 " copy to buffer
@@ -1231,11 +1266,7 @@ cnoreabbrev qq! tabclose!
 " nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 " map <C-p> :r ~/.vimbuffer<CR>
-
-
-
-
-
+"
 
 
 
