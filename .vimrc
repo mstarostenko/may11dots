@@ -824,6 +824,8 @@ let g:airline_powerline_fonts=1
 
 let g:airline_theme='badwolf'
 
+" let g:airline_theme='light'
+
 " " Set custom left separator
 let g:airline_left_sep = ''
 "
@@ -1043,10 +1045,14 @@ let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark="soft"
 hi CursorLineNr ctermbg=none
-hi ColorColumn ctermbg=233
+
+hi ColorColumn ctermbg=257
 hi Normal ctermbg=none
 hi Directory cterm=bold ctermfg=33
 hi Comment cterm=italic
+
+hi VertSplit ctermfg=35  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
+set fillchars+=vert:║
 
 
 
@@ -1334,3 +1340,10 @@ let g:syntastic_javascript_eslint_exec = '~/.vim/node_modules/.bin/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
 
 " autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+    au WinLeave * setlocal nocursorline
+augroup END

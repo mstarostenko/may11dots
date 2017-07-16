@@ -107,7 +107,7 @@ URxvt.cursorUnderline:      false
 !
 ! 1c3b36
 !233b37 --good
-*background: [70]#1c3b36
+*background: [70]#1C3B36
 *foreground: #839496
 
 ! Black + DarkGrey
