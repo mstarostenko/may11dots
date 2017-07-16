@@ -164,7 +164,7 @@ Plug 'jceb/vim-orgmode'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'roman/golden-ratio'
+" Plug 'roman/golden-ratio'
 
 Plug 'tpope/tpope-vim-abolish'
 

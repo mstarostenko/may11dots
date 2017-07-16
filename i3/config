@@ -303,13 +303,13 @@ bar {
 # │ SCRATCHPAD (quakelike window) │
 # ╞═══════════════════════════════╡
 # init
-exec urxvt -name quakelike -hold -e ~/.Scripts/quakesession.sh
+
+bindsym $mod+u exec ~/.Scripts/quaketerminal.sh
+
+for_window [instance="quakelike"] move scratchpad;
 for_window [instance="quakelike"] floating enable border pixel 2
-for_window [instance="quakelike"] resize set 1363 444;
-for_window [instance="quakelike"] move absolute position 3px 320px;
-for_window [instance="quakelike"] move scratchpad; [instance="quakelike"] scratchpad show; move scratchpad;
-# binding
-bindsym $mod+u [instance="quakelike"] scratchpad show
+for_window [instance="quakelike"] resize set 644 748 ;
+for_window [instance="quakelike"] move absolute position 0px 20px;
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.

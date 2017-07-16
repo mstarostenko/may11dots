@@ -1,0 +1,60 @@
+
+xwininfo: Window id: 0xf5 (the root window) "i3"
+
+  Root window id: 0xf5 (the root window) "i3"
+  Parent window id: 0x0 (none)
+     26 children:
+     0x160002a (has no name): ()  53x29+449+129  +449+129
+        1 child:
+        0x1a00102 (has no name): ()  53x29+0+0  +449+129
+     0x160001c "Chromium clipboard": ()  10x10+-100+-100  +-100+-100
+     0x1a00006 (has no name): ()  1x1+0+0  +0+0
+     0x1400007 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x1600005 (has no name): ()  1x1+0+0  +0+0
+     0x1c00001 (has no name): ()  1x1+0+0  +0+0
+     0x1400001 "chromium": ("chromium" "Chromium")  10x10+10+10  +10+10
+     0x1200003 "parcellite": ()  10x10+-100+-100  +-100+-100
+     0x1200001 "parcellite": ("parcellite" "Parcellite")  10x10+10+10  +10+10
+        1 child:
+        0x1200002 (has no name): ()  1x1+-1+-1  +9+9
+     0xe00004 "xcompmgr": ("compton" "xcompmgr")  1x1+0+0  +0+0
+     0xc0000c (has no name): ()  1x1+-1+-1  +-1+-1
+     0x8000e9 "[i3 con] container around 0x1eb54f0": ("i3-frame" "i3-frame")  1366x768+0+0  +0+0
+        1 child:
+        0x1e0000a "xwininfo -tree -root > whenReallyExistLog.txt": ("urxvt" "URxvt")  1366x768+0+0  +0+0
+           2 children:
+           0x1e00011 (has no name): ()  6x768+1360+0  +1360+0
+           0x1e0000f (has no name): ()  1352x752+3+3  +3+3
+     0x800072 "[i3 con] bottom dockarea eDP1": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x8000d7 "[i3 con] container around 0x1ec89e0": ("i3-frame" "i3-frame")  663x719+15+34  +15+34
+        1 child:
+        0x160001e "Pull Request #307: Task/SHOP-410 orders table - Bitbucket - Chromium": ("chromium" "Chromium")  661x717+1+1  +16+35
+           1 child:
+           0x1a000ce (has no name): ()  661x717+0+0  +16+35
+     0x800074 "[i3 con] workspace 3:<small><i>7</i></small>:<big></big> ": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x800070 "[i3 con] content eDP1": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x80008a "[i3 con] container around 0x1eb5430": ("i3-frame" "i3-frame")  1366x19+0+0  +0+0
+        1 child:
+        0xc00006 "i3bar for output eDP1": ("i3bar" "i3bar")  1366x19+0+0  +0+0
+           2 children:
+           0x1400002 "chromium": ("chromium" "Chromium")  15x15+1349+2  +1349+2
+              1 child:
+              0x1400003 (has no name): ()  1x1+-1+-1  +1348+1
+           0x1200021 "parcellite": ("parcellite" "Parcellite")  15x15+1332+2  +1332+2
+              1 child:
+              0x1200022 (has no name): ()  1x1+-1+-1  +1331+1
+     0x80006e "[i3 con] top dockarea eDP1": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x80008f "[i3 con] container around 0x1eb6be0": ("i3-frame" "i3-frame")  1363x444+3+320  +3+320
+        1 child:
+        0x100000a "quakesession.sh": ("quakelike" "URxvt")  1359x440+2+2  +5+322
+           2 children:
+           0x1000011 (has no name): ()  6x440+1353+0  +1358+322
+           0x100000f (has no name): ()  1344x432+3+3  +8+325
+     0x800091 "[i3 con] floatingcon around 0x1eb6f20": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x80006c "[i3 con] output eDP1": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x80006a "[i3 con] workspace __i3_scratch": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x800068 "[i3 con] content __i3": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x800066 "[i3 con] pseudo-output __i3": ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x800064 (has no name): ("i3-frame" "i3-frame")  10x10+-15+-15  +-15+-15
+     0x800063 "i3": ()  1x1+-1+-1  +-1+-1
+
