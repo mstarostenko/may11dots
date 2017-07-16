@@ -4,7 +4,7 @@
 export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/mstarostenko/.oh-my-zsh
+export ZSH=/home/mstarostenko/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -132,54 +132,8 @@ zle-line-init () {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-alias r="ranger"
 
-alias cl="clear"
-alias cle="clear"
-alias cler="clear"
-alias clr="clear"
-
-# GOTO ALIASES
-#
-# go to organize
-alias cdo="cd ~/Documents/may11docs"
-alias cdd="cd ~/.dotfiles"
-alias cdp="cd ~/projects"
-
-alias cdD="cd ~/Downloads"
-alias cdT="cd ~/.local/share/Trash"
-
-# todo все вариации из флагов -- в алиасы перегнать
-# в скрипт генерирующий такие алиасы
-alias lc='colorls'
-alias lcl='colorls  -l'
-
-alias lcd='colorls  -d    -1 -sd -r'
-alias lcda='colorls -d -A -1 -sd -r'
-alias lcdal='colorls -d -A -1 -sd -r'
-
-alias lcf='colorls  -f    -1 -sf -r'
-
-alias lca='colorls     -A -1 -sd -r'
-alias lca='colorls     -A -1 -sd -r'
-alias lcad='colorls -d -A -1 -sd -r'
-alias lcaf='colorls -f -A -1 -sf -r'
-alias lcafl='colorls -l -f -A -1 -sf -r'
-
-alias lcla='colorls -l -A -1 -sd -r'
-alias lcal='colorls -l -A -1 -sd -r'
-# alias lcafl=
-
-
-alias llc='colorls        -1 -sd -r'
-alias llcl='colorls -l    -1 -sd -r'
-
-
-# alias urxvt="urxvt -tn rxvt"
-
-# Всегда с verbose output, для очевидности присваивания ссылок
-alias ln="ln -v"
-
+# Deprecated
 alias dm="/usr/bin/networkmanager_dmenu"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -211,4 +165,7 @@ alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
-HISTORY_IGNORE="cl"
+# @todo not working
+# HISTORY_IGNORE="cl"
+
+source $HOME/.zshrc_aliases
