@@ -48,10 +48,10 @@ URxvt.lineSpace:            0
 
 ! FONTS
 URxvt.allow_bold:           false
-URxvt*font:           xft:mononoki Nerd Font:regular:size=10:antialias=true:hinting=true
-URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=10:antialias=true:hinting=true
-URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=10:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=10:antialias=true:hinting=true
+URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
+URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
+URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
 ! Fix font space
 URxvt*letterSpace: -1
 
@@ -107,7 +107,7 @@ URxvt.cursorUnderline:      false
 !
 ! 1c3b36
 !233b37 --good
-*background: [70]#1C3B36
+URxvt*background: [70]#1C3B36
 *foreground: #839496
 
 ! Black + DarkGrey
