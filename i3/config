@@ -344,3 +344,4 @@ bindsym $mod+Shift+Delete       exec sudo reboot
 exec parcellite &
 exec compton -b -i 0.6 -e 0.9 --backend xrender
 exec --no-startup-id chromium &
+
