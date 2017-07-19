@@ -107,7 +107,8 @@ URxvt.cursorUnderline:      false
 !
 ! 1c3b36
 !233b37 --good
-URxvt*background: [70]#1C3B36
+! URxvt*background: [70]#1C3B36
+URxvt*background: [70]#1C3232
 *foreground: #839496
 
 ! Black + DarkGrey
@@ -150,9 +151,9 @@ URXVT.colorUL: #87afd7
 ! enable scrollbar
 URxvt*scrollBar:          true
 ! scrollbar width
-URxvt*thickness:          6
+URxvt*thickness:          8
 ! scrollbar color
-URxvt*scrollColor:        #003331
+URxvt*scrollColor:        #004050
 ! scrollbar trough area color
 ! URxvt*troughColor:        #333333
 ! scrollbar without a trough

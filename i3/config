@@ -259,6 +259,8 @@ mode "resize" {
         # more gaps
         bindsym plus        gaps inner current minus 5
 
+        bindsym $mod+Shift+q kill; mode "default"
+
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"

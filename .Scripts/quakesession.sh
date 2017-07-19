@@ -1,4 +1,6 @@
-printf '\033]11;[90]#012e39\007'
+# printf '\033]11;[90]#012e39\007'
+# printf '\033]11;[90]#1C3B36\007'
+printf '\033]11;[90]#323232\007'
 
 SESSION_NAME="quakesession"
 WINDOW_0_NAME=""
