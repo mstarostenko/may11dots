@@ -1347,3 +1347,5 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
     au WinLeave * setlocal nocursorline
 augroup END
+
+let g:calendar_monday=1
