@@ -223,7 +223,7 @@ prompt_mod_dir() {
   local dir_icon_color
 
   # local LIGHTMAGENTA=131
-  local LIGHTMAGENTA=25
+  local LIGHTMAGENTA=27
   local MAGENTA=26
   local BRIGHTYELLOW=142
   local DARK=125
@@ -247,7 +247,7 @@ prompt_mod_dir() {
 }
 
 prompt_please_symbol() {
-    local mode_color=24
+    local mode_color=25
 
     # if [[ $vim_mode=="[INS]" ]] {
     #   mode_color=25
@@ -282,9 +282,9 @@ prompt_hostname() {
   local hostname=$(hostname)
   if [ "$hostname" = "mstarostenko" ]
   then
-    echo -n "%F%K{35}  %f%k"
+    echo -n "%F%K{31}  %f%k"
   else
-    echo -n "%F%K{25}  %f%k"
+    echo -n "%F%K{40}  %f%k"
   fi
 
   echo -n "%F{237} %f%F{36}%K{0}%M%k%f "
