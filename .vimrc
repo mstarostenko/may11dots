@@ -685,6 +685,16 @@ if has("autocmd")
         au FileType scss set ft=scss.css
         au FileType less set ft=less.css
 
+        " HAML
+        au FileType haml setlocal tabstop=4
+        au FileType haml setlocal softtabstop=4
+        au FileType haml setlocal shiftwidth=4
+
+        " HAML
+        au FileType ruby setlocal tabstop=2
+        au FileType ruby setlocal softtabstop=2
+        au FileType ruby setlocal shiftwidth=2
+
         au BufWinEnter * if line2byte(line("$") + 1) > 100000 | syntax clear | endif
         au BufRead,BufNewFile *.js        set ft=javascript.javascript-jquery
         au BufRead,BufNewFile *.json      set ft=json
