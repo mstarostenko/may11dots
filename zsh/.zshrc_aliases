@@ -1,9 +1,20 @@
+alias pacman="sudo pacman"
+
 alias r="ranger"
 
 alias cl="clear"
 alias cle="clear"
 alias cler="clear"
+alias celar="clear"
+alias clar="clear"
 alias clr="clear"
+
+# ZSH PLUGINS
+# --------------
+# go to orgs
+alias G="google"
+
+
 
 # GOTO ALIASES [workspace = $HOME]
 # --------------

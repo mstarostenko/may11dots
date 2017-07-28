@@ -73,6 +73,7 @@ prompt_git_end() {
   echo -n "%{%f%}"
   CURRENT_BG=''
   echo -n "\n"
+  echo -n "%F{237}╟%f"
 }
 
 ### Prompt components
@@ -221,8 +222,9 @@ prompt_mod_dir() {
   local dir_path_color
   local dir_icon_color
 
-  local LIGHTMAGENTA=131
-  local MAGENTA=132
+  # local LIGHTMAGENTA=131
+  local LIGHTMAGENTA=27
+  local MAGENTA=26
   local BRIGHTYELLOW=142
   local DARK=125
 
@@ -258,16 +260,34 @@ prompt_please_symbol() {
     echo -n " %F{$mode_color}%f"
 }
 
-prompt_instance_separator() {
-    echo -n "%F{237}----------------------------------%f"
+prompt_start() {
+    echo -n "%F{237}╟%f"
 }
 
+prompt_instance_separator() {
+    echo " "
+    echo -n "%F{237}╔═%f"
+    echo -n "%F{241} %D{%H:%M:%S}%f "
+    echo -n "%F{237}═════════════════════════════════════%f"
+}
+
+# ░░░
 prompt_current_time() {
-    echo -n "%F{23}░░░░ %U%D{%H:%M:%S}%u %f"
+    echo -n "%F{237}╟%f%F{23}     %U%D{%H:%M:%S}%u %f"
 }
 
 prompt_hostname() {
-    echo -n "%K{0}%M%k "
+  # HOSTNAME FLAG
+  # @todo проверка на hostname
+  local hostname=$(hostname)
+  if [ "$hostname" = "mstarostenko" ]
+  then
+    echo -n "%F%K{31}  %f%k"
+  else
+    echo -n "%F%K{40}  %f%k"
+  fi
+
+  echo -n "%F{237} %f%F{36}%K{0}%M%k%f "
 }
 
 prompt_username() {
@@ -280,9 +300,11 @@ prompt_exit_status() {
 }
 
 prompt_tmux_flag() {
-  [[ -n "$TMUX" ]] || return
+  echo -n " "
 
-  echo -n " %F{0}%K{136}  %f%k"
+  # TMUX FLAG
+  [[ -n "$TMUX" ]] || return
+  echo -n "%F{0}%K{136}  %f%k"
 }
 
 ## Main prompt
@@ -290,18 +312,21 @@ build_prompt() {
   RETVAL=$?
   prompt_instance_separator
   echo -n "\n"
-  prompt_current_time
+  # prompt_current_time
+  prompt_start
   prompt_hostname
   prompt_username
   prompt_exit_status
   prompt_tmux_flag
   echo -n "\n"
+  prompt_start
   prompt_mod_dir
 
   # prompt_virtualenv
   # prompt_context
   # prompt_dir
   prompt_git
+  # prompt_start
   prompt_please_symbol
   # prompt_bzr
   # prompt_hg

@@ -685,6 +685,16 @@ if has("autocmd")
         au FileType scss set ft=scss.css
         au FileType less set ft=less.css
 
+        " HAML
+        au FileType haml setlocal tabstop=4
+        au FileType haml setlocal softtabstop=4
+        au FileType haml setlocal shiftwidth=4
+
+        " HAML
+        au FileType ruby setlocal tabstop=2
+        au FileType ruby setlocal softtabstop=2
+        au FileType ruby setlocal shiftwidth=2
+
         au BufWinEnter * if line2byte(line("$") + 1) > 100000 | syntax clear | endif
         au BufRead,BufNewFile *.js        set ft=javascript.javascript-jquery
         au BufRead,BufNewFile *.json      set ft=json
@@ -770,23 +780,23 @@ let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 
 
 " NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
+" function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+"  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+"  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+" endfunction
 
 
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', 'NONE')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#6699CC', 'NONE')
-call NERDTreeHighlightFile('json', 'green', 'none', '#d8a235', 'NONE')
-call NERDTreeHighlightFile('js', 'yellow', 'none', '#d8a235', 'NONE')
-call NERDTreeHighlightFile('css', 'cyan', 'none', '#5486C0', 'NONE')
-call NERDTreeHighlightFile('scss', 'cyan', 'none', '#5486C0', 'NONE')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', 'NONE')
-call NERDTreeHighlightFile('html', 'Red', 'none', '#ffa500', 'NONE')
-call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', 'NONE')
-call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'NONE')
-call NERDTreeHighlightFile('gitconfig', '233', 'none', '#686868', 'NONE')
+" call NERDTreeHighlightFile('jade', 'green', 'none', 'green', 'NONE')
+" call NERDTreeHighlightFile('md', 'blue', 'none', '#6699CC', 'NONE')
+" call NERDTreeHighlightFile('json', 'green', 'none', '#d8a235', 'NONE')
+" call NERDTreeHighlightFile('js', 'yellow', 'none', '#d8a235', 'NONE')
+" call NERDTreeHighlightFile('css', 'cyan', 'none', '#5486C0', 'NONE')
+" call NERDTreeHighlightFile('scss', 'cyan', 'none', '#5486C0', 'NONE')
+" call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', 'NONE')
+" call NERDTreeHighlightFile('html', 'Red', 'none', '#ffa500', 'NONE')
+" call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', 'NONE')
+" call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'NONE')
+" call NERDTreeHighlightFile('gitconfig', '233', 'none', '#686868', 'NONE')
 
 " call NERDTreeHighlightFile('vimrc', '25', '233', '#686868', 'NONE')
 " call NERDTreeHighlightFile('keynavrc', '23', '233', '#686868', 'NONE')
@@ -794,11 +804,11 @@ call NERDTreeHighlightFile('gitconfig', '233', 'none', '#686868', 'NONE')
 " call NERDTreeHighlightFile('xinitrc', '23', '233', '#686868', 'NONE')
 
 " call NERDTreeHighlightFile('conf', '35', '233', '#686868', 'NONE')
-call NERDTreeHighlightFile('gitconfig', '35', '233', '#686868', 'NONE')
+" call NERDTreeHighlightFile('gitconfig', '35', '233', '#686868', 'NONE')
 
 " call NERDTreeHighlightFile('config', 'yellow', 'none', '#d8a235', 'NONE')
 " call NERDTreeHighlightFile('conf', 'yellow', 'none', '#d8a235', 'NONE')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'NONE')
+" call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'NONE')
 
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['gitconfig'] = ''
