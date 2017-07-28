@@ -267,7 +267,7 @@ prompt_current_time() {
 }
 
 prompt_hostname() {
-    echo -n "%K{0}%M%k "
+    echo -n "%F{36}%K{0}%M%k%f "
 }
 
 prompt_username() {
@@ -280,9 +280,21 @@ prompt_exit_status() {
 }
 
 prompt_tmux_flag() {
-  [[ -n "$TMUX" ]] || return
+  echo -n " "
 
-  echo -n " %F{0}%K{136}  %f%k"
+  # HOSTNAME FLAG
+  # @todo проверка на hostname
+  local hostname=$(hostname)
+  if [ "$hostname" = "mstarostenko" ]
+  then
+    echo -n "%F%K{35}  %f%k"
+  else
+    echo -n 'nop'
+  fi
+
+  # TMUX FLAG
+  [[ -n "$TMUX" ]] || return
+  echo -n "%F{0}%K{136}  %f%k"
 }
 
 ## Main prompt

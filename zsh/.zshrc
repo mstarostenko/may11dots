@@ -4,6 +4,12 @@
 #
 export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
+export EDITOR="vim"
+
+# configurator:
+#https://dom111.github.io/grep-colors/#!input=c2w9OTc7NDg7NTsyMzY6Y3g9Mzc7NDA6bXQ9MzA7NDg7NTsxODY6Zm49Mzg7NTsxOTc6bG49Mzg7NTsxNTQ6Ym49Mzg7NTsxNDE6c2U9Mzg7NTs4MQ==&
+export GREP_COLORS='mt=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36';
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/mstarostenko/.oh-my-zsh
 
@@ -11,6 +17,7 @@ export ZSH=/home/mstarostenko/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster_mod"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +61,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git last-working-dir)
+plugins=(git last-working-dir web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,7 +110,7 @@ fi
 bindkey -v
 
 # Remove delay when entering normal mode (vi)
-KEYTIMEOUT=5
+KEYTIMEOUT=1
 
 # use cursor as indicator of vi mode
 zle-keymap-select () {
