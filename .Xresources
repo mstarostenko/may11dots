@@ -107,7 +107,7 @@ URxvt.cursorUnderline:      false
 !
 ! 1c3b36
 !233b37 --good
-URxvt*background: [60]#1C3B36
+URxvt*background: [70]#1C3B36
 ! URxvt*background: [70]#1C3232
 *foreground: #839496
 
