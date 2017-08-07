@@ -280,14 +280,17 @@ prompt_hostname() {
   # HOSTNAME FLAG
   # @todo проверка на hostname
   local hostname=$(hostname)
-  if [ "$hostname" = "mstarostenko" ]
+  local username_color=31
+  if [ "$hostname" = "mstarostenko" ] || [ "$hostname" = "max-notebook" ]
   then
     echo -n "%F%K{31}  %f%k"
+    username_color=31
   else
     echo -n "%F%K{40}  %f%k"
+    username_color=40
   fi
 
-  echo -n "%F{237} %f%F{36}%K{0}%M%k%f "
+  echo -n "%F{237} %f%F{$username_color}%K{0}%M%k%f "
 }
 
 prompt_username() {
