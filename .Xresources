@@ -48,12 +48,17 @@ URxvt.lineSpace:            0
 
 ! FONTS
 URxvt.allow_bold:           false
-URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
-URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
-URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
+! URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
+! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
+! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
+! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
 ! Fix font space
-URxvt*letterSpace: -1
+! URxvt*letterSpace: -1
+
+URxvt.font: xft:Monaco:pixelsize=10:antialias=false
+URxvt.boldFont: xft:Monaco:style=Bold:pixelsize=10:antialias=false
+URxvt.italicFont:
+URxvt.boldItalicFont:
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
@@ -103,13 +108,14 @@ URxvt.cursorUnderline:      false
 ! *background: [65]#012723
 ! 122623
 ! *background: [65]#0e2421
-! *background: [75]#182927
+! *background: [85]#182927
 !
 ! 1c3b36
 !233b37 --good
-URxvt*background: [60]#1C3B36
-! URxvt*background: [70]#1C3232
+! URxvt*background: [60]#1C3B36
+URxvt*background: [70]#1C3232
 *foreground: #839496
+! *foreground: #bbccff
 
 ! Black + DarkGrey
 *color0:  #282828
