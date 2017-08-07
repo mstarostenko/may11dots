@@ -53,13 +53,22 @@ URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=
 URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
 URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
 ! Fix font space
+! <<<<<<< HEAD
 ! URxvt*letterSpace: -1
 
 ! URxvt.font: xft:Monaco:pixelsize=10:antialias=false
 ! URxvt.boldFont: xft:Monaco:style=Bold:pixelsize=10:antialias=false
 ! URxvt.italicFont:
 ! URxvt.boldItalicFont:
+! =======
+URxvt*letterSpace: -1
+! >>>>>>> ca2188ff2987a89ee8e56fced7a795dae884c28e
 
+! URxvt.font: xft:Monaco:pixelsize=12:antialias=true
+! URxvt.boldFont: xft:Monaco:style=Bold:pixelsize=12:antialias=true
+! URxvt.italicFont:
+! URxvt.boldItalicFont:
+!
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            true
@@ -105,15 +114,24 @@ URxvt.urlLauncher:          i3-sensible-browser
 URxvt.cursorColor:          #ff2734
 URxvt.cursorUnderline:      false
 
-! *background: [65]#012723
+! *background: [30]#012723
+! *background: [70]#232323
 ! 122623
 ! *background: [65]#0e2421
 ! *background: [85]#182927
 !
 ! 1c3b36
 !233b37 --good
-! URxvt*background: [60]#1C3B36
-URxvt*background: [70]#1C3232
+! <<<<<<< HEAD
+! URxvt*background: [70]#1C3B36
+! ! URxvt*background: [70]#1C3232
+! =======
+! URxvt*background: [70]#1C3B36
+URxvt*background: [60]#0b2c25
+! URxvt*background: [70]#1C3232
+! URxvt*background: [45]#1C3232
+
+! URxvt*background: [70]#1C3B36
 *foreground: #839496
 ! *foreground: #bbccff
 
@@ -130,6 +148,7 @@ URxvt*background: [70]#1C3232
 *color3:  #d79921
 *color11: #fabd2f
 ! DarkBlue + Blue
+! *color4:  #347477
 *color4:  #458588
 *color12: #83a598
 ! DarkMagenta + Magenta
