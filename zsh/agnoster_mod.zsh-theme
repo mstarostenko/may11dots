@@ -223,8 +223,8 @@ prompt_mod_dir() {
   local dir_icon_color
 
   # local LIGHTMAGENTA=131
-  local LIGHTMAGENTA=27
-  local MAGENTA=26
+  local LIGHTMAGENTA=4
+  local MAGENTA=4
   local BRIGHTYELLOW=142
   local DARK=125
 
@@ -243,7 +243,7 @@ prompt_mod_dir() {
   local dir_offset='   '
   [[ $PWD == $HOME || $PWD == "/" ]] && dir_offset=""
 
-  echo -n " %F{$dir_icon_color}%f %F{$dir_path_color}%~$dir_offset"
+  echo -n " %F{$dir_icon_color}%f %F{$dir_path_color}%U%~%u$dir_offset"
 }
 
 prompt_please_symbol() {
