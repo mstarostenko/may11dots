@@ -168,6 +168,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/tpope-vim-abolish'
 
+" Plug 'ying17zi/vim-live-latexreview'
+
 " Initialize plugin system
 call plug#end()
 
