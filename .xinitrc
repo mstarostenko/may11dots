@@ -18,7 +18,7 @@ keynav &
 
 (
     if [[ -f ~/.wallpapers/screen_bg.jpg ]]; then
-        feh --bg-scal ~/.wallpapers/screen_bg.jpg
+        feh --bg-scal ~/.config/wallpapers/main.jpg
     fi
 ) &
 
