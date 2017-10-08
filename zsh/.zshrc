@@ -3,6 +3,7 @@
 # @todo dynamic ruby folder variable
 #
 export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
+export MANPAGER="vim -c MANPAGER -"
 
 export EDITOR="vim"
 
