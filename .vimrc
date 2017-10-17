@@ -168,6 +168,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/tpope-vim-abolish'
 
+Plug 'posva/vim-vue'
+
 " Plug 'ying17zi/vim-live-latexreview'
 
 " Initialize plugin system
@@ -697,14 +699,23 @@ if has("autocmd")
         au FileType ruby setlocal softtabstop=2
         au FileType ruby setlocal shiftwidth=2
 
+
         au BufWinEnter * if line2byte(line("$") + 1) > 100000 | syntax clear | endif
         au BufRead,BufNewFile *.js        set ft=javascript.javascript-jquery
         au BufRead,BufNewFile *.json      set ft=json
         au BufRead,BufNewFile *.bemhtml   set ft=javascript
         au BufRead,BufNewFile *.xjst      set ft=javascript
-        au BufRead,BufNewFile *.vue       set ft=javascript
         au BufRead,BufNewFile *.tt2       set ft=tt2
         au BufRead,BufNewFile *.plaintex  set ft=plaintex.tex
+
+        " JAVASCRIPT
+        au FileType javascript setlocal tabstop=2
+        au FileType javascript setlocal softtabstop=2
+        au FileType javascript setlocal shiftwidth=2
+
+        au FileType vue setlocal tabstop=2
+        au FileType vue setlocal softtabstop=2
+        au FileType vue setlocal shiftwidth=2
 
         " Auto close preview window, it uses with tags,
         " I don't use it
