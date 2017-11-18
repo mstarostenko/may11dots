@@ -4,7 +4,8 @@ Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-*foreground: #00cc00
+! *foreground: #00cc00
+*foreground: #5ab738
 *foreground_bold: #a8a19f
 !!background      = #1b1918
 !!*background: rgba(0, 0, 0, .7)
@@ -60,7 +61,7 @@ URxvt*scrollTtyOutput:      false
 *color15: #f1efee
 
 URxvt.intensityStyles:	false
-URxvt.background:       [70]#000000
+URxvt.background:       [80]#1f0f1f
 URxvt.depth:     32
 
 URxvt.perl-ext-common: default,autocomplete-ALL-the-things,resize-font,url-select
