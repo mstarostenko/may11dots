@@ -1066,7 +1066,7 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
-let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_dark="hard"
 hi CursorLineNr ctermbg=none
 
 hi ColorColumn ctermbg=257

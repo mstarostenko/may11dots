@@ -117,6 +117,7 @@ bindkey -v
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=1
 
+# https://gist.github.com/andyfowler/1195581
 # use cursor as indicator of vi mode
 zle-keymap-select () {
   if [ $KEYMAP = vicmd ]; then
@@ -124,16 +125,18 @@ zle-keymap-select () {
       echo -ne "\033]12;#ff2734\007"
       echo -ne "\e[1 q"
     else
-      printf '\033Ptmux;\033\033]12;#ff2734\007\033\\'
-      echo -ne "\e[1 q"
+      printf '\033Ptmux;\033\033[1 q\033\\'
+      # printf '\033Ptmux;\033\033]12;#ff2734\007\033\\'
+      # echo -ne "\e[1 q"
     fi
   else
     if [[ $TMUX = '' ]]; then
       echo -ne "\033]12;#ff2734\007"
       echo -ne "\e[5 q"
     else
-      printf '\033Ptmux;\033\033]12;#ff2734\007\033\\'
-      printf '\e[5 q'
+      printf '\033Ptmux;\033\033[5 q\033\\'
+      # printf '\033Ptmux;\033\033]12;#ff2734\007\033\\'
+      # printf '\e[5 q'
     fi
   fi
 }
