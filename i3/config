@@ -40,8 +40,11 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 #Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 1
-gaps inner 10
-gaps outer 5
+gaps inner 12
+gaps outer -10
+smart_gaps on
+smart_borders on
+
 
 bindsym $mod+F7     exec transset-df -a --dec .15
 bindsym $mod+F8     exec transset-df -a --inc .15
@@ -284,12 +287,14 @@ bindsym $mod+r mode "resize"
 bar {
     strip_workspace_numbers yes
     colors {
-        background #111111
-        focused_workspace #3EE888 #08A74D #ffFF85
-        inactive_workspace #022710 #052513 #1C7C27
+        background #224B7A
+        focused_workspace #224B7A #4A76A8 #ffffff
+        inactive_workspace #022710 #183352 #1C7C27
         active_workspace #000000 #000000 #008080
         urgent_workspace #8B0000 #8B0000 #000000
     }
+
+    height 17
 
     # font pango:mononoki Nerd Font
     font pango:DejaVu Sans Mono for Powerline 8
@@ -344,6 +349,6 @@ bindsym $mod+Shift+Delete       exec sudo reboot
 # │ AUTORUN APP                   │
 # ╞═══════════════════════════════╡
 exec parcellite &
-exec compton -b -i 0.6 -e 0.9 --backend xrender
+exec compton -b -i 0.8 -e 0.9 --backend xrender
 exec --no-startup-id chromium &
 

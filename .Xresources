@@ -12,12 +12,22 @@ Xft.hintstyle:              hintslight
 
 
 ! FONTS
-URxvt.allow_bold:           false
-URxvt*font:           xft:mononoki Nerd Font:regular:size=9:antialias=true:hinting=true
-URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=9:antialias=true:hinting=true
-URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=9:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=9:antialias=true:hinting=true
-URxvt*letterSpace: -1
+! Iosevka Nerd Font Mono:style=Regular,Book
+URxvt.allow_bold:           true
+! URxvt*font:           xft:mononoki Nerd Font:regular:size=8:antialias=true:hinting=true
+! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
+! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=true
+! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hinting=true
+
+URxvt*font:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+URxvt*boldFont:           xft:InconsolataLGC Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+URxvt*italicFont:           xft:InconsolataLGC Nerd Font Mono:italic:size=8:antialias=true:hinting=true
+URxvt*boldItalicFont:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+
+! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
+! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=t:10ff/10ff/10ff/d999rue
+! g URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hintjjing=true
+! URxvt*letterSpace: -1
 
 
 URxvt.fading:               0
@@ -61,7 +71,7 @@ URxvt*scrollTtyOutput:      false
 *color15: #f1efee
 
 URxvt.intensityStyles:	false
-URxvt.background:       [80]#1f0f1f
+URxvt.background:       [80]#000000
 URxvt.depth:     32
 
 URxvt.perl-ext-common: default,autocomplete-ALL-the-things,resize-font,url-select
