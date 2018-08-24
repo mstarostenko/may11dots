@@ -1,10 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # @todo dynamic ruby folder variable
-#
+
+export TERM=xterm-256color
 export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
+
 export PATH=/.npm-global/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
+
+export PATH=/opt/anaconda/bin:$PATH
+
+
+# export PATH= /opt/anaconda/bin/anaconda:$PATH
 
 export MANPAGER="vim -c MANPAGER -"
 
