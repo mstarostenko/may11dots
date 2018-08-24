@@ -43,10 +43,11 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 !! Appearance
-! urxvt.termName: rxvt-unicode
+urxvt.termName: rxvt-unicode-256color
 urxvt.background: [85]#292A2B
 URxvt.background:       [85]#121212
-urxvt.foreground: #E6E6E6
+urxvt.foreground: #d3f3c9
+! E6E6E6
 ! *foreground: #5ab738
 ! *foreground_bold: #a8a19f
 urxvt.geometry: 110x80
