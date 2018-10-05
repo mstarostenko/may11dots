@@ -2,9 +2,17 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # @todo dynamic ruby folder variable
 #
+export TERM=xterm-256color
+
 export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
+
 export PATH=/.npm-global/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
+
+export PATH=/opt/anaconda/bin:$PATH
+
+
+# export PATH= /opt/anaconda/bin/anaconda:$PATH
 
 export MANPAGER="vim -c MANPAGER -"
 
@@ -120,9 +128,11 @@ KEYTIMEOUT=1
 # https://gist.github.com/andyfowler/1195581
 # use cursor as indicator of vi mode
 zle-keymap-select () {
+    # cmd режим
   if [ $KEYMAP = vicmd ]; then
     if [[ $TMUX = '' ]]; then
-      echo -ne "\033]12;#ff2734\007"
+        # green
+      echo -ne "\033]12;#00ff00\007"
       echo -ne "\e[1 q"
     else
       printf '\033Ptmux;\033\033[1 q\033\\'
@@ -130,8 +140,9 @@ zle-keymap-select () {
       # echo -ne "\e[1 q"
     fi
   else
+        # blue
     if [[ $TMUX = '' ]]; then
-      echo -ne "\033]12;#ff2734\007"
+      echo -ne "\033]12;#1395F9\007"
       echo -ne "\e[5 q"
     else
       printf '\033Ptmux;\033\033[5 q\033\\'
@@ -142,7 +153,7 @@ zle-keymap-select () {
 }
 zle-line-init () {
   zle -K viins
-  echo -ne "\033]12;#ff2734\007"
+  echo -ne "\033]12;#1395F9\007"
     printf '\e[5 q'
 }
 zle -N zle-keymap-select
@@ -150,7 +161,7 @@ zle -N zle-line-init
 
 
 # Deprecated
-alias dm="/usr/bin/networkmanager_dmenu"
+# alias dm="/usr/bin/networkmanager_dmenu"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
