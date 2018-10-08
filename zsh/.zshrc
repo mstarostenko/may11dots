@@ -9,7 +9,7 @@ export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 export PATH=/.npm-global/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 
-export PATH=/opt/anaconda/bin:$PATH
+# export PATH=/opt/anaconda/bin:$PATH
 
 
 # export PATH= /opt/anaconda/bin/anaconda:$PATH
@@ -74,7 +74,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git last-working-dir web-search extract)
+plugins=(git last-working-dir web-search extract jira dircycle encode64 systemd tig wd)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -1,3 +1,7 @@
+alias dockerr= "sudo docker run  3000:3000 --rm -it -v $(pwd):/srv/http nexus.opentech.local:8082/aevitas/nodejs10_yarn-dev:latest"
+
+
+
 alias pacman="sudo pacman"
 
 alias r="ranger"
@@ -28,6 +32,8 @@ alias cdp="cd ~/projects"
 alias cdD="cd ~/Downloads"
 # go to project Trash
 alias cdT="cd ~/.local/share/Trash"
+
+
 
 
 
