@@ -406,7 +406,9 @@ augroup run_after_plug_end
 
     " MINE PLUGINS ------------------------------------
     " -------------------------------------------------
+    Plug 'scrooloose/nerdtree'
     Plug 'terryma/vim-expand-region'
+
 
 augroup end
 
@@ -488,6 +490,11 @@ set fcs=vert:│
 
 
 "///// MINE CUSTOM REMAPINGS
+" Save document
+noremap <silent> <c-s> :write!<CR>
+inoremap <silent> <c-s> <c-c>:write!<CR>
+vnoremap <silent> <c-s> <c-o>:write!<CR>
+
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -495,6 +502,7 @@ vnoremap K :m '<-2<CR>gv=gv
 let &t_SI = "\033]12;#1395F9\007\e[6 q"
 let &t_EI = "\033]12;#00FF00\007\e[2 q"
 
+" Resize window
 nnoremap <silent> <F5> :resize -5<CR>
 nnoremap <silent> <F6> :resize +5<CR>
 nnoremap <silent> <F7> :vertical resize -5<CR>
@@ -503,14 +511,39 @@ nnoremap <silent> <F8> :vertical resize +5<CR>
 " Expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" Navigate between WINDOWS
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key, '[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+noremap <silent> <C-H> :call WinMove('h')<CR>
+noremap <silent> <C-J> :call WinMove('j')<CR>
+noremap <silent> <C-K> :call WinMove('k')<CR>
+noremap <silent> <C-L> :call WinMove('l')<CR>
+
+map y <Plug>(highlightedyank)
+
+" NERDTree:
+map ,; :NERDTreeToggle<CR>
+" reveal file in the tree
+map ,o :NERDTreeFind<CR>
+
 "////////////////////////////////
 "////////////////////////////////
-////////////////////////////////
 
 let html_no_rendering=1
 
 " Ctrl+Backspace in cmd line
-cmap <C-H> <C-W>
+"cmap <C-H> <C-W>
 
 imap <C-T> <C-R>=strpart(search("[)}\"'`\\]>]", "c"), -1, 0)<CR><Right>
 
@@ -541,7 +574,7 @@ inoremap <silent> @; <C-\><C-O>:ArgWrap<CR>
 
 inoremap <C-J> <nop>
 
-nnoremap <C-H> <C-W>h
+"nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
@@ -577,8 +610,8 @@ inoremap <expr> <C-O> pumvisible()
     \ ? (feedkeys("\<C-N>") ? '' : '')
     \ : (feedkeys("\<C-O>", 'n') ? '' : '')
 
-nnoremap <C-H> :%s/\v
-vnoremap <C-H> :s/\v
+"nnoremap <C-H> :%s/\v
+"vnoremap <C-H> :s/\v
 
 augroup unite_setting
     au!
