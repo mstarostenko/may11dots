@@ -10,31 +10,33 @@ endif
 augroup run_after_plug_end
     au!
 
-call plug#begin('~/.vim/bundle')
+    call plug#begin('~/.vim/bundle')
 
-let mapleader="\<space>"
+    let mapleader="\<space>"
 
-let g:vim_indent_cont = shiftwidth()
+    "let mapleader = '-'
 
-Plug 'dahu/SearchParty'
+    let g:vim_indent_cont = shiftwidth()
+
+    Plug 'dahu/SearchParty'
     au VimEnter * au! SearchPartySearching
     au BufEnter * let b:searching = 0
     au CursorHold * call SPAfterSearch()
 
     nmap <silent> <Leader><Leader> :let @/=''<CR><Plug>SearchPartyHighlightClear
 
-Plug 'tmhedberg/matchit'
+    Plug 'tmhedberg/matchit'
 
-Plug 'scrooloose/nerdcommenter'
+    Plug 'scrooloose/nerdcommenter'
     nmap <Leader>l <Leader>cl
 
-Plug 'kien/rainbow_parentheses.vim'
+    Plug 'kien/rainbow_parentheses.vim'
 
-Plug 'wojtekmach/vim-rename'
+    Plug 'wojtekmach/vim-rename'
 
-Plug 'vim-scripts/repeat.vim'
+    Plug 'vim-scripts/repeat.vim'
 
-Plug 'reconquest/vim-colorscheme'
+    Plug 'reconquest/vim-colorscheme'
     let g:colors_name = "reconquest"
 
     au ColorScheme * hi MatchParen ctermfg=226 ctermbg=none cterm=bold
@@ -45,7 +47,7 @@ Plug 'reconquest/vim-colorscheme'
     au ColorScheme * hi Error ctermbg=1 ctermfg=16 cterm=bold
 
 
-Plug 'vim-scripts/surround.vim'
+    Plug 'vim-scripts/surround.vim'
     vmap ( S)i
     vmap ) S)%a
 
@@ -62,10 +64,10 @@ Plug 'vim-scripts/surround.vim'
         au FileType sh map <silent> <C-]> :normal viWS)i$<CR>
     augroup END
 
-Plug 'seletskiy/nginx-vim-syntax'
+    Plug 'seletskiy/nginx-vim-syntax'
 
-Plug 'junegunn/fzf', {'do': './install --all'}
-Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', {'do': './install --all'}
+    Plug 'junegunn/fzf.vim'
     let g:fzf_prefer_tmux = 1
     au FileType * let g:fzf#vim#default_layout  = {'bottom': '10%'}
     let $FZF_DEFAULT_COMMAND = 'ctrlp-search'
@@ -73,13 +75,13 @@ Plug 'junegunn/fzf.vim'
         exec 'FZF'
     endfunc!
 
-Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh' }
-Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh' }
+    Plug 'ctrlpvim/ctrlp.vim'
     func! _ctrlp_buffer_add_augroup()
         augroup _ctrlp_buffer_bufenter
             au!
             au BufEnter * exe "wincmd" "_" |
-                        \ call _ctrlp_buffer_remove_augroup()
+                \ call _ctrlp_buffer_remove_augroup()
         augroup end
     endfunc!
 
@@ -143,28 +145,28 @@ Plug 'ctrlpvim/ctrlp.vim'
 
     nnoremap <C-E> :Grep<CR>
 
-Plug 'itchyny/lightline.vim'
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'enable': {
-      \     'statusline': 1,
-      \     'tabline': 0
-      \ },
-      \ 'component': {
-      \   'filename': '%f'
-      \ }
-      \ }
+    Plug 'itchyny/lightline.vim'
+    let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'enable': {
+        \     'statusline': 1,
+        \     'tabline': 0
+        \ },
+        \ 'component': {
+        \   'filename': '%f'
+        \ }
+        \ }
 
-"Plug 'seletskiy/vim-autosurround'
+    "Plug 'seletskiy/vim-autosurround'
 
-Plug 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpForwardTrigger = '<C-J>'
     let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
 
     let g:UltiSnipsSnippetDirectories = [
-    \ $HOME.'/.vim/bundle/snippets',
-    \ $HOME.'/.vim/UltiSnips'
-    \ ]
+        \ $HOME.'/.vim/bundle/snippets',
+        \ $HOME.'/.vim/UltiSnips'
+        \ ]
 
     let g:UltiSnipsEnableSnipMate = 0
     let g:UltiSnipsEditSplit = "horizontal"
@@ -185,13 +187,13 @@ Plug 'SirVer/ultisnips'
     func! _snippets_open_dotfiles()
         split
         execute "edit" g:snippets_dotfiles .
-                    \ _snippets_get_filetype() . ".snippets"
+            \ _snippets_get_filetype() . ".snippets"
     endfunc!
 
     func! _snippets_open_reconquest()
         split
         execute "edit" g:snippets_reconquest .
-                    \ _snippets_get_filetype() .  ".snippets"
+            \ _snippets_get_filetype() .  ".snippets"
     endfunc!
 
     nnoremap <C-S><C-D> :call _snippets_open_dotfiles()<CR>
@@ -204,33 +206,33 @@ Plug 'SirVer/ultisnips'
         au BufEnter,BufWinEnter *.py let g:pymode_lint = 1
     augroup END
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi'
-Plug 'fishbullet/deoplete-ruby'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-   let g:deoplete#enable_at_startup = 1
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'zchee/deoplete-jedi'
+    Plug 'fishbullet/deoplete-ruby'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+    let g:deoplete#enable_at_startup = 1
 
     func! _setup_deoplete()
-       call deoplete#custom#source(
-           \ '_', 'min_pattern_length', 1)
+        call deoplete#custom#source(
+            \ '_', 'min_pattern_length', 1)
 
         call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
         call deoplete#custom#source('_', 'sorters', [])
 
-       " unlimited candidate length
+        " unlimited candidate length
         call deoplete#custom#source('_', 'max_kind_width', 0)
         call deoplete#custom#source('_', 'max_menu_width', 0)
         call deoplete#custom#source('_', 'max_abbr_width', 0)
-   endfunc!
+    endfunc!
 
-   augroup _setup_deoplete
-       au!
-       au VimEnter * call _setup_deoplete()
-   augroup end
+    augroup _setup_deoplete
+        au!
+        au VimEnter * call _setup_deoplete()
+    augroup end
 
-Plug 'kovetskiy/vim-go', {'for': 'go'}
+    Plug 'kovetskiy/vim-go', {'for': 'go'}
     let g:go_fmt_command = "goimports"
     let g:go_snippet_engine = "skip"
     let g:go_fmt_autosave = 0
@@ -274,27 +276,27 @@ Plug 'kovetskiy/vim-go', {'for': 'go'}
         au FileType go nmap <silent><buffer> <Leader>t :GoTest<CR>
     augroup END
 
-Plug 'vim-ruby/vim-ruby'
-Plug 'ruby-formatter/rufo-vim'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'ruby-formatter/rufo-vim'
 
-Plug 'michaeljsmith/vim-indent-object'
+    Plug 'michaeljsmith/vim-indent-object'
 
-Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-misc'
 
-Plug 'cespare/vim-toml'
+    Plug 'cespare/vim-toml'
 
-Plug 'seletskiy/vim-over80'
-Plug 'markonm/traces.vim'
+    Plug 'seletskiy/vim-over80'
+    Plug 'markonm/traces.vim'
 
-Plug 'wellle/targets.vim'
+    Plug 'wellle/targets.vim'
 
-Plug 'maksimr/vim-jsbeautify'
+    Plug 'maksimr/vim-jsbeautify'
 
-Plug 'reconquest/vim-pythonx'
+    Plug 'reconquest/vim-pythonx'
 
-Plug 'reconquest/snippets'
+    Plug 'reconquest/snippets'
 
-Plug 'justinmk/vim-sneak'
+    Plug 'justinmk/vim-sneak'
     let g:sneak#streak = 1
 
     nmap gs <Plug>Sneak_S
@@ -307,35 +309,35 @@ Plug 'justinmk/vim-sneak'
 
     au ColorScheme * hi Sneak ctermfg=226
 
-Plug 'kovetskiy/vim-plugvim-utils'
+    Plug 'kovetskiy/vim-plugvim-utils'
     au BufRead .vimrc nnoremap <buffer> <Leader>r :call NewPlugFromClipboard()<CR>
 
-Plug 'seletskiy/vim-nunu'
+    Plug 'seletskiy/vim-nunu'
 
-Plug 'hynek/vim-python-pep8-indent'
+    Plug 'hynek/vim-python-pep8-indent'
 
-Plug 'vim-utils/vim-man'
+    Plug 'vim-utils/vim-man'
 
-Plug 'kovetskiy/vim-bash'
+    Plug 'kovetskiy/vim-bash'
 
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+    Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
     vnoremap <C-T> :Tabularize /
 
-Plug 'deadcrew/deadfiles'
+    Plug 'deadcrew/deadfiles'
 
-Plug 'kovetskiy/vim-ski'
+    Plug 'kovetskiy/vim-ski'
     let g:skeletons_dir=$HOME . '/.deadfiles/.vim/skeletons/'
 
-Plug 'FooSoft/vim-argwrap'
+    Plug 'FooSoft/vim-argwrap'
 
-Plug 'kovetskiy/synta'
+    Plug 'kovetskiy/synta'
 
-Plug 'kovetskiy/vim-hacks'
+    Plug 'kovetskiy/vim-hacks'
 
-Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-abolish'
 
-Plug 'airblade/vim-gitgutter'
-    let s:nbsp=" "
+    Plug 'airblade/vim-gitgutter'
+    let s:nbsp=" "
     let g:gitgutter_sign_removed='-'
     let g:gitgutter_sign_modified=s:nbsp . '±'
     let g:gitgutter_sign_modified_removed='-±'
@@ -344,34 +346,34 @@ Plug 'airblade/vim-gitgutter'
 
     "au CursorHold * GitGutterEnable
 
-Plug 'digitaltoad/vim-pug'
+    Plug 'digitaltoad/vim-pug'
 
-Plug 'kovetskiy/vim-autoresize'
+    Plug 'kovetskiy/vim-autoresize'
 
-Plug 'nathanielc/vim-tickscript'
+    Plug 'nathanielc/vim-tickscript'
 
-Plug 'w0rp/ale'
+    Plug 'w0rp/ale'
     func! _ale_gotags()
 
     endfunc!
     let g:ale_enabled = 0
 
     let g:ale_fixers = {
-    \   'go': [function("synta#ale#goimports#Fix")],
-    \   'ruby': [function('ale#fixers#rufo#Fix')],
-    \}
+        \   'go': [function("synta#ale#goimports#Fix")],
+        \   'ruby': [function('ale#fixers#rufo#Fix')],
+        \}
     let g:ale_linters = {
-    \   'go': ['gobuild'],
-    \}
+        \   'go': ['gobuild'],
+        \}
     let g:ale_fix_on_save = 1
     " au operations BufRead,BufNewFile *.go
 
-Plug 'mg979/vim-visual-multi', {'branch': 'test'}
+    Plug 'mg979/vim-visual-multi', {'branch': 'test'}
     let g:VM_leader = "\\"
     let g:VM_no_meta_mappings = 1
     let g:VM_maps = {
-    \ 'Select All': '<C-A>',
-    \ }
+        \ 'Select All': '<C-A>',
+        \ }
 
     fun! VM_before_auto()
         call MacroBefore()
@@ -399,6 +401,13 @@ Plug 'mg979/vim-visual-multi', {'branch': 'test'}
         map ; <Plug>Sneak_;
     endfunction!
 
+    Plug 'machakann/vim-highlightedyank'
+
+
+    " MINE PLUGINS ------------------------------------
+    " -------------------------------------------------
+    Plug 'terryma/vim-expand-region'
+
 augroup end
 
 call plug#end()
@@ -414,6 +423,16 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" MINE -------------------------------------------
+" Mute error bell
+set novisualbell
+
+" for guests
+set mouse=a
+
+set splitbelow
+set splitright
+
 " Hack to ensure, that ~/.vim is looked first
 set rtp-=~/.vim
 set rtp^=~/.vim
@@ -423,7 +442,7 @@ set tags=./.tags;/
 set title
 set encoding=utf-8
 set printencoding=cp1251
-set timeoutlen=180
+set timeoutlen=300
 set wildmenu
 set undofile
 set undodir=$HOME/.vim/runtime/undo
@@ -466,6 +485,27 @@ set formatoptions=qrn1tol
 set list
 set lcs=trail:·,space:┈,tab:\┈\┈ " <- trailing space here
 set fcs=vert:│
+
+
+"///// MINE CUSTOM REMAPINGS
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+let &t_SI = "\033]12;#1395F9\007\e[6 q"
+let &t_EI = "\033]12;#00FF00\007\e[2 q"
+
+nnoremap <silent> <F5> :resize -5<CR>
+nnoremap <silent> <F6> :resize +5<CR>
+nnoremap <silent> <F7> :vertical resize -5<CR>
+nnoremap <silent> <F8> :vertical resize +5<CR>
+
+" Expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+"////////////////////////////////
+"////////////////////////////////
+////////////////////////////////
 
 let html_no_rendering=1
 
@@ -534,8 +574,8 @@ cnoremap <C-E> <End>
 noremap <expr> <Leader>s feedkeys(":sp " . expand('%:h') . "/")
 
 inoremap <expr> <C-O> pumvisible()
-            \ ? (feedkeys("\<C-N>") ? '' : '')
-            \ : (feedkeys("\<C-O>", 'n') ? '' : '')
+    \ ? (feedkeys("\<C-N>") ? '' : '')
+    \ : (feedkeys("\<C-O>", 'n') ? '' : '')
 
 nnoremap <C-H> :%s/\v
 vnoremap <C-H> :s/\v
@@ -601,7 +641,7 @@ augroup vimrc
     au BufWritePost */.i3.config.* call system('systemctl --user restart i3:config')
 
     au BufWritePost /*/.vim/*/pythonx/*.py exec printf('py module="%s".rsplit("pythonx/", 2)[-1].rstrip(".py").replace("/", "."); __import__(module); reload(sys.modules[module])',
-                \ expand('%:p'))
+        \ expand('%:p'))
 augroup end
 
 augroup quickfix
@@ -626,12 +666,12 @@ augroup confluence
     " ugly hack to trim all inter-tags whitespaces
     au BufWritePre /tmp/vimperator-confluence* let b:_trim_pattern = '\v\>[\ \t\n]+\<' |
         \ if search(b:_trim_pattern, 'wn') |
-            \ let b:_trim_successfull = 1 |
-            \ let b:_trim_cursor = [line('.'), col('.')] |
-            \ exe "normal i\<C-G>u\<ESC>" |
-            \ exe "%s/" . b:_trim_pattern . "/></" |
+        \ let b:_trim_successfull = 1 |
+        \ let b:_trim_cursor = [line('.'), col('.')] |
+        \ exe "normal i\<C-G>u\<ESC>" |
+        \ exe "%s/" . b:_trim_pattern . "/></" |
         \ else |
-            \ let b:_trim_successfull = 0 |
+        \ let b:_trim_successfull = 0 |
         \ endif
     au BufWritePost /tmp/vimperator-confluence* if b:_trim_successfull |
         \ silent! undo |
@@ -683,7 +723,7 @@ function! InstallGoHandlers()
         au!
 
         autocmd BufWritePre *.go if searchpos('^\v(const|var)?\s+usage\s+\=\s+`', 'nw') != [0, 0] |
-                \ silent! exe '/^\v(const|var)?\s+usage\s+\=\s+`/+1,/^`$/s/\t/    /' |
+            \ silent! exe '/^\v(const|var)?\s+usage\s+\=\s+`/+1,/^`$/s/\t/    /' |
             \ endif
     augroup end
 endfunction
@@ -766,3 +806,4 @@ let &t_EI = "\<Esc>[2 q"
 command!
     \ Diff
     \ call DiffEnable()
+
