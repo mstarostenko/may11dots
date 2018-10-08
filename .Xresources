@@ -63,8 +63,8 @@ URxvt*scrollTtyOutput:      false
 
 
 !! Font prefferenes
-urxvt.font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=10:weight=bold
-urxvt.boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=10:weight=bold
+urxvt.font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
+urxvt.boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
 ! urxvt.boldFont: xft:Droid Sans Mono for Powerline:pixelsize=14:weight=bold
 ! URxvt.allow_bold:           true
 urxvt.letterSpace: -1
