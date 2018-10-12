@@ -16,7 +16,7 @@ augroup run_after_plug_end
 
     "let mapleader = '-'
 
-    " let g:vim_indent_cont = shiftwidth()
+    let g:vim_indent_cont = shiftwidth()
 
     Plug 'dahu/SearchParty'
     au VimEnter * au! SearchPartySearching
@@ -31,22 +31,13 @@ augroup run_after_plug_end
     nmap <Leader>l <Leader>cl
 
     Plug 'kien/rainbow_parentheses.vim'
-    let g:rainbow_conf = {
-	\	'ctermfgs': [119, 127, 111, 87],
-	\}
 
     Plug 'wojtekmach/vim-rename'
 
     Plug 'vim-scripts/repeat.vim'
 
-    " Colorscheme gruvbox for vim
-    Plug 'morhetz/gruvbox'
-
     Plug 'reconquest/vim-colorscheme'
-
-    set background=dark
-    colorscheme gruvbox
-    let g:colors_name = "gruvbox"
+    let g:colors_name = "reconquest"
 
     au ColorScheme * hi MatchParen ctermfg=226 ctermbg=none cterm=bold
     au ColorScheme * hi Search cterm=bold ctermfg=16 ctermbg=226
@@ -215,31 +206,31 @@ augroup run_after_plug_end
         au BufEnter,BufWinEnter *.py let g:pymode_lint = 1
     augroup END
 
-    "Plug 'Shougo/deoplete.nvim'
-    "Plug 'zchee/deoplete-jedi'
-    "Plug 'fishbullet/deoplete-ruby'
-    "Plug 'roxma/nvim-yarp'
-    "Plug 'roxma/vim-hug-neovim-rpc'
-    "Plug 'zchee/deoplete-go', { 'do': 'make'}
-    "let g:deoplete#enable_at_startup = 1
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'zchee/deoplete-jedi'
+    Plug 'fishbullet/deoplete-ruby'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+    let g:deoplete#enable_at_startup = 1
 
-    "func! _setup_deoplete()
-        "call deoplete#custom#source(
-            "\ '_', 'min_pattern_length', 1)
+    func! _setup_deoplete()
+        call deoplete#custom#source(
+            \ '_', 'min_pattern_length', 1)
 
-        "call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-        "call deoplete#custom#source('_', 'sorters', [])
+        call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+        call deoplete#custom#source('_', 'sorters', [])
 
-        "" unlimited candidate length
-        "call deoplete#custom#source('_', 'max_kind_width', 0)
-        "call deoplete#custom#source('_', 'max_menu_width', 0)
-        "call deoplete#custom#source('_', 'max_abbr_width', 0)
-    "endfunc!
+        " unlimited candidate length
+        call deoplete#custom#source('_', 'max_kind_width', 0)
+        call deoplete#custom#source('_', 'max_menu_width', 0)
+        call deoplete#custom#source('_', 'max_abbr_width', 0)
+    endfunc!
 
-    "augroup _setup_deoplete
-        "au!
-        "au VimEnter * call _setup_deoplete()
-    "augroup end
+    augroup _setup_deoplete
+        au!
+        au VimEnter * call _setup_deoplete()
+    augroup end
 
     Plug 'kovetskiy/vim-go', {'for': 'go'}
     let g:go_fmt_command = "goimports"
@@ -288,7 +279,7 @@ augroup run_after_plug_end
     Plug 'vim-ruby/vim-ruby'
     Plug 'ruby-formatter/rufo-vim'
 
-    " Plug 'michaeljsmith/vim-indent-object'
+    Plug 'michaeljsmith/vim-indent-object'
 
     Plug 'xolox/vim-misc'
 
@@ -350,8 +341,7 @@ augroup run_after_plug_end
     let g:gitgutter_sign_removed='-'
     let g:gitgutter_sign_modified=s:nbsp . '±'
     let g:gitgutter_sign_modified_removed='-±'
-    "let g:gitgutter_sign_column_always=1
-    set signcolumn=yes
+    let g:gitgutter_sign_column_always=1
     let g:gitgutter_enabled = 0
 
     "au CursorHold * GitGutterEnable
@@ -418,29 +408,6 @@ augroup run_after_plug_end
     " -------------------------------------------------
     Plug 'scrooloose/nerdtree'
     Plug 'terryma/vim-expand-region'
-    Plug 'posva/vim-vue'
-    Plug 'jparise/vim-graphql'
-
-    " " [1] install 'ag' for vim
-    " " Поисковка silver-search для vim
-    Plug 'rking/ag.vim'
-
-    " " [2] install 'ag' for NERD-TREE
-    " " Поисковка silver-search для nerd-tree
-    Plug 'taiansu/nerdtree-ag'
-
-
-    " Fix-up dot command behavior
-    " it's kind of service plugin
-    Plug 'tpope/vim-repeat'
-
-    " Add smart commands for comments like:
-    " gcc - Toggle comment for the current line
-    " gc  - Toggle comments for selected region or number of strings
-    Plug 'tomtom/tcomment_vim'
-
-    Plug 'Yggdroot/indentLine'
-
 
 
 augroup end
@@ -490,13 +457,8 @@ set incsearch
 set history=500
 set smartcase
 set ignorecase
-" Replace tabs with spaces
 set expandtab
 set autoindent
-" Enable smart indent. it add additional indents whe necessary
-set smartindent
-" When you hit tab at start of line, indent added according to shiftwidth value
-set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
@@ -516,9 +478,6 @@ set winminheight=0
 set shortmess+=sAIc
 
 set backup
-" Show matching brackets
-"
-set showmatch
 
 " autocomplete list numbers
 " autoinsert comment Leader
@@ -880,29 +839,4 @@ let &t_EI = "\<Esc>[2 q"
 command!
     \ Diff
     \ call DiffEnable()
-
-au BufEnter * hi MatchParen ctermfg=226 ctermbg=none cterm=bold
-
-
-" Navigate between TABS
-nmap <S-h> :tabprevious<CR>
-nmap <S-l> :tabnext<CR>
-nmap <C-t> :tabnew<CR>
-
-cnoreabbrev qq tabclose
-cnoreabbrev qq! tabclose!
-
-cnoreabbrev qq tabclose
-cnoreabbrev qq! tabclose!
-
-set listchars=tab:→\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
-" Disable swp files
-set noswapfile
-
-" Allow backspace to remove indents, newlines and old text
-set backspace=indent,eol,start
-
-set showtabline=2
-
-
 
