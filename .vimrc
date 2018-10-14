@@ -14,8 +14,6 @@ augroup run_after_plug_end
 
     let mapleader="\<space>"
 
-    "let mapleader = '-'
-
     " let g:vim_indent_cont = shiftwidth()
 
     Plug 'dahu/SearchParty'
@@ -42,10 +40,9 @@ augroup run_after_plug_end
     " Colorscheme gruvbox for vim
     Plug 'morhetz/gruvbox'
 
-    Plug 'reconquest/vim-colorscheme'
+    " Plug 'reconquest/vim-colorscheme'
 
     set background=dark
-    colorscheme gruvbox
     let g:colors_name = "gruvbox"
 
     au ColorScheme * hi MatchParen ctermfg=226 ctermbg=none cterm=bold
@@ -73,7 +70,7 @@ augroup run_after_plug_end
         au FileType sh map <silent> <C-]> :normal viWS)i$<CR>
     augroup END
 
-    Plug 'seletskiy/nginx-vim-syntax'
+    " Plug 'seletskiy/nginx-vim-syntax'
 
     Plug 'junegunn/fzf', {'do': './install --all'}
     Plug 'junegunn/fzf.vim'
@@ -241,19 +238,6 @@ augroup run_after_plug_end
         "au VimEnter * call _setup_deoplete()
     "augroup end
 
-    Plug 'kovetskiy/vim-go', {'for': 'go'}
-    let g:go_fmt_command = "goimports"
-    let g:go_snippet_engine = "skip"
-    let g:go_fmt_autosave = 0
-    let g:go_fmt_fail_silently = 1
-    let g:go_metalinter_command="gometalinter -D golint --cyclo-over 15"
-    let g:go_highlight_functions = 1
-    let g:go_highlight_methods = 1
-    let g:go_template_autocreate = 0
-    let g:go_def_mapping_enabled = 0
-    let g:go_def_mode = 'godef'
-    let g:go_list_type = "quickfix"
-
     func! _goto_prev_func()
         call search('^func ', 'b')
         nohlsearch
@@ -366,17 +350,29 @@ augroup run_after_plug_end
     func! _ale_gotags()
 
     endfunc!
-    let g:ale_enabled = 0
+    let g:ale_enabled = 1
 
     let g:ale_fixers = {
         \   'go': [function("synta#ale#goimports#Fix")],
         \   'ruby': [function('ale#fixers#rufo#Fix')],
+        \   'javascript': ['eslint', 'prettier'],
         \}
+
     let g:ale_linters = {
+        \   'javascript': ['eslint'],
         \   'go': ['gobuild'],
         \}
+
     let g:ale_fix_on_save = 1
     " au operations BufRead,BufNewFile *.go
+    "
+    "
+
+    let g:ale_sign_error = "◉"
+    let g:ale_sign_warning = "◉"
+    let g:ale_set_highlights = 1
+    highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
+    highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
     Plug 'mg979/vim-visual-multi', {'branch': 'test'}
     let g:VM_leader = "\\"
@@ -440,6 +436,17 @@ augroup run_after_plug_end
     Plug 'tomtom/tcomment_vim'
 
     Plug 'Yggdroot/indentLine'
+    let g:indentLine_char = '┆'
+
+    Plug 'Raimondi/delimitMate'
+
+    Plug 'ironhouzi/vim-stim'
+
+    Plug 'itchyny/vim-highlighturl'
+
+    Plug 'itchyny/vim-cursorword'
+
+
 
 
 
@@ -459,6 +466,14 @@ filetype plugin on
 filetype indent on
 
 " MINE -------------------------------------------
+" ================ Scrolling ========================
+set shiftround
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+set showcmd
+"
 " Mute error bell
 set novisualbell
 
@@ -690,32 +705,11 @@ augroup ft_customization
     au FileType ruby setl et ts=2 sts=2 sw=2
 augroup end
 
-augroup go_src
-    au!
-    au FileType go setl noexpandtab
-    au FileType nnoremap <buffer> K <Plug>(go-doc-vertical)
-    "au FileType go nmap <buffer> <Leader>r <Plug>(go-run)
-    "au FileType go map <buffer> <Leader>t <Plug>(go-test)
-    "au FileType go map <buffer> <Leader>b <CR>:call synta#go#build(1)<CR>
-    au FileType go call InstallGoHandlers()
-    au BufEnter *.go let g:argwrap_tail_comma = 1
-    "au FileType go nnoremap <buffer> <C-T> :call synta#quickfix#next()<CR>
-    "au FileType go nnoremap <buffer> <C-E><C-R> :call synta#quickfix#prev()<CR>
-    "au FileType go nnoremap <buffer> <C-E><C-T> :call synta#quickfix#error()<CR>
-    "au FileType go nnoremap <buffer> <C-Q><C-D> :normal! A,<CR>
-    "au FileType go inoremap <buffer> <C-Q><C-D> <C-\><C-O>:normal! A,<CR>
-    "au FileType go nnoremap <buffer> gd :GoDef<CR>
-    au BufRead,BufNewFile *.slide setfiletype present
-augroup end
-
 augroup vimrc
     au!
     au BufWritePost */.vimrc source %
     au BufWritePost */.Xresources call system('systemctl --user restart xrdb')
     au BufWritePost */.i3.config.* call system('systemctl --user restart i3:config')
-
-    au BufWritePost /*/.vim/*/pythonx/*.py exec printf('py module="%s".rsplit("pythonx/", 2)[-1].rstrip(".py").replace("/", "."); __import__(module); reload(sys.modules[module])',
-        \ expand('%:p'))
 augroup end
 
 augroup quickfix
@@ -728,35 +722,6 @@ augroup rainbow
     au BufEnter * RainbowParenthesesActivate
     au Syntax * RainbowParenthesesLoadRound
     au Syntax * RainbowParenthesesLoadBraces
-augroup end
-
-augroup confluence
-    au!
-    au BufRead /tmp/vimperator-confluence* set ft=html.confluence | call HtmlBeautify()
-
-    " trim empty <p><br/></p> from document
-    au BufRead /tmp/vimperator-confluence* map <buffer> <Leader>t :%s/\v[\ \t\n]+\<p\>([\ \t\n]+\<br\>)?[\ \t\n]+\<\/p\>/<CR>
-
-    " ugly hack to trim all inter-tags whitespaces
-    au BufWritePre /tmp/vimperator-confluence* let b:_trim_pattern = '\v\>[\ \t\n]+\<' |
-        \ if search(b:_trim_pattern, 'wn') |
-        \ let b:_trim_successfull = 1 |
-        \ let b:_trim_cursor = [line('.'), col('.')] |
-        \ exe "normal i\<C-G>u\<ESC>" |
-        \ exe "%s/" . b:_trim_pattern . "/></" |
-        \ else |
-        \ let b:_trim_successfull = 0 |
-        \ endif
-    au BufWritePost /tmp/vimperator-confluence* if b:_trim_successfull |
-        \ silent! undo |
-        \ call cursor(b:_trim_cursor[0], b:_trim_cursor[1]) |
-        \ endif
-augroup end
-
-augroup flowtime
-    au!
-
-    au BufRead $HOME/sources/slides-*/*.html set ft=html.flowtime
 augroup end
 
 augroup winfixheight
@@ -791,31 +756,6 @@ augroup titlestring
 augroup end
 
 com! BufWipe silent! bufdo! bw | enew!
-
-function! InstallGoHandlers()
-    augroup go_fmt
-        au!
-
-        autocmd BufWritePre *.go if searchpos('^\v(const|var)?\s+usage\s+\=\s+`', 'nw') != [0, 0] |
-            \ silent! exe '/^\v(const|var)?\s+usage\s+\=\s+`/+1,/^`$/s/\t/    /' |
-            \ endif
-    augroup end
-endfunction
-
-command! QuickFixOpenAll call QuickFixOpenAll()
-function! QuickFixOpenAll()
-    if empty(getqflist())
-        return
-    endif
-    let s:prev_val = ""
-    for d in getqflist()
-        let s:curr_val = bufname(d.bufnr)
-        if (s:curr_val != s:prev_val)
-            exec "edit " . s:curr_val
-        endif
-        let s:prev_val = s:curr_val
-    endfor
-endfunction
 
 fun! g:ApplySyntaxForDiffComments()
     let extension = expand('%:e')
