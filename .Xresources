@@ -44,8 +44,8 @@ URxvt.lineSpace:            0
 
 !! Appearance
 urxvt.termName: rxvt-unicode-256color
-urxvt.background: [85]#292A2B
-URxvt.background:       [85]#121212
+urxvt.background: [65]#292A2B
+! URxvt.background:       [85]#121212
 urxvt.foreground: #d3f3c9
 ! E6E6E6
 ! *foreground: #5ab738

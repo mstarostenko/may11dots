@@ -519,7 +519,7 @@ set backspace=2
 set laststatus=2
 set gdefault
 set completeopt-=preview
-set nowrap
+set nowrap!
 set updatetime=150
 set showtabline=0
 set cino=(s,m1,+0,L0
