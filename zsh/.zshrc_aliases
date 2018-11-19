@@ -63,3 +63,7 @@ alias lcal='colorls -l -A -1 -sd -r'
 
 alias llc='colorls        -1 -sd -r'
 alias llcl='colorls -l    -1 -sd -r'
+
+
+
+touch-p() { mkdir -p "$(dirname "$1")" && touch "$1" ; }

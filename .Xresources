@@ -1,157 +1,166 @@
-! FONTS
-! Iosevka Nerd Font Mono:style=Regular,Book
-! URxvt*font:           xft:mononoki Nerd Font:regular:size=8:antialias=true:hinting=true
-! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
-! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=true
-! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hinting=true
-
-! URxvt*font:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
-! URxvt*boldFont:           xft:InconsolataLGC Nerd Font Mono:regular:size=8:antialias=true:hinting=true
-! URxvt*italicFont:           xft:InconsolataLGC Nerd Font Mono:italic:size=8:antialias=true:hinting=true
-! URxvt*boldItalicFont:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
-
-! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
-! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=t:10ff/10ff/10ff/d999rue
-! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hintjjing=true
-! URxvt*letterSpace: -1
-
-
-
-
-
-URxvt.intensityStyles:	false
-URxvt.depth:     32
-
-
-rofi.fake-transparency:	true
-rofi.lines:		3
-rofi.bw:		0
-rofi.opacity:		"10"
-! rofi.hide-scrollbar:	true
-rofi.width:		30
-
-! Cursor
+! ! FONTS
+! ! Iosevka Nerd Font Mono:style=Regular,Book
+! ! URxvt*font:           xft:mononoki Nerd Font:regular:size=8:antialias=true:hinting=true
+! ! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
+! ! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=true
+! ! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hinting=true
+!
+! ! URxvt*font:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+! ! URxvt*boldFont:           xft:InconsolataLGC Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+! ! URxvt*italicFont:           xft:InconsolataLGC Nerd Font Mono:italic:size=8:antialias=true:hinting=true
+! ! URxvt*boldItalicFont:           xft:Iosevka Nerd Font Mono:regular:size=8:antialias=true:hinting=true
+!
+! ! URxvt*boldFont:       xft:mononoki Nerd Font:bold:size=8:antialias=true:hinting=true
+! ! URxvt*italicFont:     xft:mononoki Nerd Font:italic:size=8:antialias=true:hinting=t:10ff/10ff/10ff/d999rue
+! ! URxvt*boldItalicFont: xft:mononoki Nerd Font:bold:italic:size=8:antialias=true:hintjjing=true
+! ! URxvt*letterSpace: -1
+!
+!
+!
+!
+!
+! URxvt.intensityStyles:	false
+! URxvt.depth:     32
+!
+!
+! rofi.fake-transparency:	true
+! rofi.lines:		10
+! rofi.bw:		0
+! rofi.opacity:		"10"
+! ! rofi.hide-scrollbar:	true
+! rofi.width:		30
+!
+! ! Cursor
+! ! URxvt.cursorBlink:          true
+! ! *cursor: #a8a19f
+! ! URxvt.cursorColor:	white
+!
+!
+!
+! URxvt.fading:               0
+! URxvt.loginShell:           true
+! URxvt.internalBorder:       3
+! URxvt.lineSpace:            0
+!
+! !! Appearance
+! urxvt.termName: rxvt-unicode-256color
+! urxvt.background: [65]#292A2B
+! ! URxvt.background:       [85]#121212
+! urxvt.foreground: #d3f3c9
+! ! E6E6E6
+! ! *foreground: #5ab738
+! ! *foreground_bold: #a8a19f
+! urxvt.geometry: 110x80
+!
+! !! Scrollbar
+! URxvt*scrollBar:          true
+! URxvt*thickness:          8
+! URxvt*scrollColor:        #004050
+! URxvt*scrollBar_right:    true
+! URxvt*scrollstyle:        plain
+! URxvt*scrollTtyOutput:      false
+!
+!
+!
+! !! Font prefferenes
+! ! urxvt.font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
+! ! urxvt.boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
+! urxvt.font: xft:DroidSansMonoNerdFontComplete Nerd Font:pixelsize=14
+! urxvt.boldFont: xft:DroidSansMonoNerdFontComplete Nerd Font:pixelsize=14:weight=bold
+!
+! !TerminessTTF Nerd Font:style=Medium
+! !
+! ! urxvt.font: xft:TerminessTTF Nerd Font:pixelsize=16:style=Medium
+! ! urxvt.boldFont: xft:TerminessTTF Nerd Font:pixelsize=16:style=Bold
+!
+! ! urxvt.boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
+! ! urxvt.boldFont: xft:Droid Sans Mono for Powerline:pixelsize=14:weight=bold
+! ! URxvt.allow_bold:           true
+! urxvt.letterSpace: -1
+! ! Xft.antialias:              1
+! Xft.dpi:                    96
+! Xft.antialias: true
+! Xft.rgba: rgb
+! Xft.hinting: true
+! ! Xft.hintstyle: hintfull
+! Xft.hintstyle:              hintslight
+!
+! !! Cursor
 ! URxvt.cursorBlink:          true
-! *cursor: #a8a19f
-! URxvt.cursorColor:	white
-
-
-
-URxvt.fading:               0
-URxvt.loginShell:           true
-URxvt.internalBorder:       3
-URxvt.lineSpace:            0
-
-!! Appearance
-urxvt.termName: rxvt-unicode-256color
-urxvt.background: [65]#292A2B
-! URxvt.background:       [85]#121212
-urxvt.foreground: #d3f3c9
-! E6E6E6
-! *foreground: #5ab738
-! *foreground_bold: #a8a19f
-urxvt.geometry: 110x80
-
-!! Scrollbar
-URxvt*scrollBar:          true
-URxvt*thickness:          8
-URxvt*scrollColor:        #004050
-URxvt*scrollBar_right:    true
-URxvt*scrollstyle:        plain
-URxvt*scrollTtyOutput:      false
-
-
-
-!! Font prefferenes
-urxvt.font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
-urxvt.boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=11:weight=bold
-! urxvt.boldFont: xft:Droid Sans Mono for Powerline:pixelsize=14:weight=bold
-! URxvt.allow_bold:           true
-urxvt.letterSpace: -1
-! Xft.antialias:              1
-Xft.dpi:                    96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-! Xft.hintstyle: hintfull
-Xft.hintstyle:              hintslight
-
-!! Cursor
-URxvt.cursorBlink:          true
-! urxvt.cursorBlink:          true
-urxvt.cursorColor:          #FF75B5
-
-! Почему то при false перестает работать square shape cursor in vim
-! Нашел решение здесь https://www.linuxquestions.org/questions/linux-general-1/cursor-in-vim-urxvt-4175422804/
-urxvt.cursorUnderline:      true
-
-!! Larger history limit
-urxvt.saveLines: 1000000
-
-!! Perl extensions
-! urxvt.perl-ext-common: default,matcher,font-size
-
-URxvt.perl-ext-common: default,autocomplete-ALL-the-things,resize-font,url-select
-URxvt.perl-lib:    $HOME/.config/Scripts
-URxvt.url-launcher:	/usr/bin/xdg-open
-URxvt.resize-font.smaller:	C-Down
-URxvt.resize-font.bigger:	C-Up
-
-
-! URL select
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-URxvt.keysym.M-u: perl:url-select:select_next
-
-URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
-URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
-URxvt.keysym.M-quotedbl:  perl:aAtt:undo
-
-URxvt.colorUL:    #4682B4
-rofi.color-enabled: true
-rofi.color-window:  #000, #000, #000
-rofi.color-normal:  #111, #819396, #222, #008ed4, #ffffff
-rofi.color-active:  #002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent:  #002b37, #da4281, #003643, #008ed4, #890661
-
-!! Open urls in browser with Control-Click
-! urxvt.urlLauncher: /usr/bin/firefox
-! URxvt.matcher.button:	1
-urxvt.matcher.button: C1
-
-!! Change font size on Control-Plus/Minus
-URxvt.keysym.Control-0x2b: perl:font-size:increase
-URxvt.keysym.Control-0x2d: perl:font-size:decrease
-
-!! Panda color theme
-! black (dark, light)
-URxvt.color0: rgb:29/2A/2B
-URxvt.color8: rgb:E6/E6/E6
-
-! pink
-URxvt.color1: rgb:ff/75/b5
-URxvt.color9: rgb:ff/9a/c1
-
-! green
-URxvt.color2: rgb:19/f9/d8
-URxvt.color10: rgb:19/f9/d8
-
-! orange
-URxvt.color3: rgb:FF/B8/6C
-URxvt.color11: rgb:ff/cc/95
-
-! blue
-URxvt.color4: rgb:45/a9/f9
-URxvt.color12: rgb:6f/c1/ff
-
-! purple, red
-URxvt.color5: rgb:b0/84/eb
-URxvt.color13: rgb:FF/2C/6D
-
-! cyan, purple
-URxvt.color6: rgb:6f/c1/ff
-URxvt.color14: rgb:b0/84/eb
-
-! white
-URxvt.color7: rgb:29/2A/2B
-URxvt.color15: rgb:ff/ff/ff
+! ! urxvt.cursorBlink:          true
+! urxvt.cursorColor:          #FF75B5
+!
+! ! Почему то при false перестает работать square shape cursor in vim
+! ! Нашел решение здесь https://www.linuxquestions.org/questions/linux-general-1/cursor-in-vim-urxvt-4175422804/
+! urxvt.cursorUnderline:      true
+!
+! !! Larger history limit
+! urxvt.saveLines: 1000000
+!
+! !! Perl extensions
+! ! urxvt.perl-ext-common: default,matcher,font-size
+!
+! URxvt.perl-ext-common: default,autocomplete-ALL-the-things,resize-font,url-select
+! URxvt.perl-lib:    $HOME/.config/Scripts
+! URxvt.url-launcher:	/usr/bin/xdg-open
+! URxvt.resize-font.smaller:	C-Down
+! URxvt.resize-font.bigger:	C-Up
+!
+!
+! ! URL select
+! URxvt.url-select.launcher: /usr/bin/xdg-open
+! URxvt.url-select.underline: true
+! URxvt.keysym.M-u: perl:url-select:select_next
+!
+! URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
+! URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+! URxvt.keysym.M-quotedbl:  perl:aAtt:undo
+!
+! ! URxvt.colorUL:    #4682B4
+! ! rofi.color-enabled: true
+! ! rofi.color-window:  #000, #000, #000
+! ! rofi.color-normal:  #111, #819396, #222, #008ed4, #ffffff
+! ! rofi.color-active:  #002b37, #008ed4, #003643, #008ed4, #66c6ff
+! ! rofi.color-urgent:  #002b37, #da4281, #003643, #008ed4, #890661
+!
+! !! Open urls in browser with Control-Click
+! ! urxvt.urlLauncher: /usr/bin/firefox
+! ! URxvt.matcher.button:	1
+! urxvt.matcher.button: C1
+!
+! !! Change font size on Control-Plus/Minus
+! URxvt.keysym.Control-0x2b: perl:font-size:increase
+! URxvt.keysym.Control-0x2d: perl:font-size:decrease
+!
+! !! Panda color theme
+! ! black (dark, light)
+! URxvt.color0: rgb:29/2A/2B
+! URxvt.color8: rgb:E6/E6/E6
+!
+! ! pink
+! URxvt.color1: rgb:ff/75/b5
+! URxvt.color9: rgb:ff/9a/c1
+!
+! ! green
+! URxvt.color2: rgb:19/f9/d8
+! URxvt.color10: rgb:19/f9/d8
+!
+! ! orange
+! URxvt.color3: rgb:FF/B8/6C
+! URxvt.color11: rgb:ff/cc/95
+!
+! ! blue
+! URxvt.color4: rgb:45/a9/f9
+! URxvt.color12: rgb:6f/c1/ff
+!
+! ! purple, red
+! URxvt.color5: rgb:b0/84/eb
+! URxvt.color13: rgb:FF/2C/6D
+!
+! ! cyan, purple
+! URxvt.color6: rgb:6f/c1/ff
+! URxvt.color14: rgb:b0/84/eb
+!
+! ! white
+! URxvt.color7: rgb:29/2A/2B
+! URxvt.color15: rgb:ff/ff/ff

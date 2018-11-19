@@ -165,52 +165,52 @@ augroup run_after_plug_end
 
     "Plug 'seletskiy/vim-autosurround'
 
-    Plug 'SirVer/ultisnips'
-    let g:UltiSnipsJumpForwardTrigger = '<C-J>'
-    let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
+    " Plug 'SirVer/ultisnips'
+    " let g:UltiSnipsJumpForwardTrigger = '<C-J>'
+    " let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
+    "
+    " let g:UltiSnipsSnippetDirectories = [
+    "     \ $HOME.'/.vim/bundle/snippets',
+    "     \ $HOME.'/.vim/UltiSnips'
+    "     \ ]
+    "
+    " let g:UltiSnipsEnableSnipMate = 0
+    " let g:UltiSnipsEditSplit = "horizontal"
+    " let g:UltiSnipsUsePythonVersion = 2
 
-    let g:UltiSnipsSnippetDirectories = [
-        \ $HOME.'/.vim/bundle/snippets',
-        \ $HOME.'/.vim/UltiSnips'
-        \ ]
+    " func! _snippets_get_filetype()
+    "     let l:dot = strridx(&filetype, ".")
+    "     if l:dot != -1
+    "         return strpart(&filetype, 0, dot)
+    "     endif
+    "
+    "     return &filetype
+    " endfunc!
+    "
+    " let g:snippets_dotfiles = $HOME . "/.vim/UltiSnips/"
+    " let g:snippets_reconquest = $HOME . "/.vim/bundle/snippets/"
+    "
+    " func! _snippets_open_dotfiles()
+    "     split
+    "     execute "edit" g:snippets_dotfiles .
+    "         \ _snippets_get_filetype() . ".snippets"
+    " endfunc!
+    "
+    " func! _snippets_open_reconquest()
+    "     split
+    "     execute "edit" g:snippets_reconquest .
+    "         \ _snippets_get_filetype() .  ".snippets"
+    " endfunc!
 
-    let g:UltiSnipsEnableSnipMate = 0
-    let g:UltiSnipsEditSplit = "horizontal"
-    let g:UltiSnipsUsePythonVersion = 2
+    " nnoremap <C-S><C-D> :call _snippets_open_dotfiles()<CR>
+    " nnoremap <C-S><C-S> :call _snippets_open_reconquest()<CR>
+    " vnoremap <C-S> y:UltiSnipsEdit<CR>Go<CR>snippet HERE<CR>endsnippet<ESC>k]p?HERE<CR>zzciw
 
-    func! _snippets_get_filetype()
-        let l:dot = strridx(&filetype, ".")
-        if l:dot != -1
-            return strpart(&filetype, 0, dot)
-        endif
-
-        return &filetype
-    endfunc!
-
-    let g:snippets_dotfiles = $HOME . "/.vim/UltiSnips/"
-    let g:snippets_reconquest = $HOME . "/.vim/bundle/snippets/"
-
-    func! _snippets_open_dotfiles()
-        split
-        execute "edit" g:snippets_dotfiles .
-            \ _snippets_get_filetype() . ".snippets"
-    endfunc!
-
-    func! _snippets_open_reconquest()
-        split
-        execute "edit" g:snippets_reconquest .
-            \ _snippets_get_filetype() .  ".snippets"
-    endfunc!
-
-    nnoremap <C-S><C-D> :call _snippets_open_dotfiles()<CR>
-    nnoremap <C-S><C-S> :call _snippets_open_reconquest()<CR>
-    vnoremap <C-S> y:UltiSnipsEdit<CR>Go<CR>snippet HERE<CR>endsnippet<ESC>k]p?HERE<CR>zzciw
-
-    augroup ultisnips_pyflakes
-        au!
-        au BufEnter,BufWinEnter *.snippets let g:pymode_lint = 0
-        au BufEnter,BufWinEnter *.py let g:pymode_lint = 1
-    augroup END
+    " augroup ultisnips_pyflakes
+    "     au!
+    "     au BufEnter,BufWinEnter *.snippets let g:pymode_lint = 0
+    "     au BufEnter,BufWinEnter *.py let g:pymode_lint = 1
+    " augroup END
 
     "Plug 'Shougo/deoplete.nvim'
     "Plug 'zchee/deoplete-jedi'
@@ -445,6 +445,8 @@ augroup run_after_plug_end
     Plug 'itchyny/vim-highlighturl'
 
     Plug 'itchyny/vim-cursorword'
+
+    Plug 'ryanoasis/vim-devicons'
 
 
 
@@ -842,7 +844,7 @@ set noswapfile
 " Allow backspace to remove indents, newlines and old text
 set backspace=indent,eol,start
 
-set showtabline=2
+set showtabline=2 
 
-
+let g:NERDTreeBookmarksSort=0
 

@@ -37,17 +37,35 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #90j000
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+# client.focused          $bg     $bg     $fg  #102704       $bg
+# client.focused_inactive $bg     $bg     $fg  #484e50       $bg
+# client.unfocused        $bg     $bg     $fg  #292d2e       $bg
+# client.urgent           $bg     $bg     $fg  #90j000       $bg
+# client.placeholder      $bg     $bg     $fg  #000000       $bg
+#
+# client.background       $bg
+
+
 #Needed for i3-gaps
 hide_edge_borders both
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 12
 gaps outer -10
 smart_gaps on
 smart_borders on
 
 
-bindsym $mod+F7     exec transset-df -a --dec .15
-bindsym $mod+F8     exec transset-df -a --inc .15
+bindsym $mod+F7     exec transset-df -a --dec .10
+bindsym $mod+F8     exec transset-df -a --inc .10
 
 
 
@@ -58,7 +76,8 @@ bindsym $mod+F8     exec transset-df -a --inc .15
 # ╞═══════════════════════════════╡
 #
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -349,6 +368,7 @@ bindsym $mod+Shift+Delete       exec sudo reboot
 # │ AUTORUN APP                   │
 # ╞═══════════════════════════════╡
 exec parcellite &
-exec compton -b -i 0.8 -e 0.9 --backend xrender
+# exec compton -b -i 0.8 -e 0.9 --backend xrender
+exec compton -b --backend xrender
 exec --no-startup-id chromium &
 

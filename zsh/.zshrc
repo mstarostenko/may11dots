@@ -188,11 +188,26 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
-alias v='f -e vim' # quick opening files with vim
-alias m='f -e mplayer' # quick opening files with mplayer
-alias o='a -e xdg-open' # quick opening files with xdg-open
+# alias v='f -e vim' # quick opening files with vim
+# alias m='f -e mplayer' # quick opening files with mplayer
+#
+# alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # @todo not working
 # HISTORY_IGNORE="cl"
 
 source $HOME/.zshrc_aliases
+
+
+# Не работает, шлет лишние символы в ssh
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+

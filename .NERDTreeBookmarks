@@ -1,6 +1,6 @@
-HOME ~/
-|org ~/Documents/may11docs
-|dot ~/.dotfiles
-|Dld ~/Downloads
-p|pro ~/project
+🏠|Home ~/
+♻️.|Tmp ~/TEMP
+⚙️.|.config ~/.config
+🏗️|Projectory ~/Projectory
+📰|DocPapers ~/Documents/may11docs/DocPapers
 
