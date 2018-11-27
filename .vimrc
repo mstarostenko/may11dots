@@ -285,6 +285,8 @@ augroup run_after_plug_end
 
     Plug 'maksimr/vim-jsbeautify'
 
+    Plug  'pangloss/vim-javascript'
+
     Plug 'reconquest/vim-pythonx'
 
     Plug 'reconquest/snippets'
@@ -448,6 +450,8 @@ augroup run_after_plug_end
 
     Plug 'ryanoasis/vim-devicons'
 
+    Plug 'cakebaker/scss-syntax.vim'
+
 
 
 
@@ -466,6 +470,8 @@ syntax on
 
 filetype plugin on
 filetype indent on
+
+
 
 " MINE -------------------------------------------
 " ================ Scrolling ========================
@@ -521,7 +527,7 @@ set backspace=2
 set laststatus=2
 set gdefault
 set completeopt-=preview
-set nowrap!
+set nowrap
 set updatetime=150
 set showtabline=0
 set cino=(s,m1,+0,L0
@@ -705,6 +711,9 @@ augroup ft_customization
     au FileType yaml setl ts=2 sts=2 sw=2
     au FileType *.chart setl ft=chart
     au FileType ruby setl et ts=2 sts=2 sw=2
+
+    au FileType vue syntax sync fromstart
+    au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.scss
 augroup end
 
 augroup vimrc

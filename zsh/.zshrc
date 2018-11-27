@@ -115,9 +115,9 @@ source $ZSH/oh-my-zsh.sh
 stty -ixon
 
 # Colorscheme on ANSI sequences
-if [ -f $HOME/.Scripts/gruvbox_256palette.sh ]; then
-    . $HOME/.Scripts/gruvbox_256palette.sh
-fi
+# if [ -f $HOME/.Scripts/gruvbox_256palette.sh ]; then
+#     . $HOME/.Scripts/gruvbox_256palette.sh
+# fi
 
 # Activate Vim mode
 bindkey -v
